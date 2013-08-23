@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE7ACCED17C5F4A500A12DC4 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7ACCEB17C5F4A500A12DC4 /* MeViewController.m */; };
+		CE7ACCEE17C5F4A500A12DC4 /* MeViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7ACCEC17C5F4A500A12DC4 /* MeViewController_iPhone.xib */; };
+		CE7ACCF317C5F63400A12DC4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7ACCF117C5F63400A12DC4 /* LoginViewController.m */; };
+		CE7ACCF417C5F63400A12DC4 /* LoginViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7ACCF217C5F63400A12DC4 /* LoginViewController_iPhone.xib */; };
 		CEC59FFD17BDC46E001CF970 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC59FFC17BDC46E001CF970 /* UIKit.framework */; };
 		CEC59FFF17BDC46E001CF970 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC59FFE17BDC46E001CF970 /* Foundation.framework */; };
 		CEC5A00117BDC46E001CF970 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC5A00017BDC46E001CF970 /* CoreGraphics.framework */; };
@@ -16,19 +20,27 @@
 		CEC5A00F17BDC46E001CF970 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A00E17BDC46E001CF970 /* Default.png */; };
 		CEC5A01117BDC46E001CF970 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A01017BDC46E001CF970 /* Default@2x.png */; };
 		CEC5A01317BDC46E001CF970 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A01217BDC46E001CF970 /* Default-568h@2x.png */; };
-		CEC5A01617BDC46E001CF970 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC5A01517BDC46E001CF970 /* FirstViewController.m */; };
+		CEC5A01617BDC46E001CF970 /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC5A01517BDC46E001CF970 /* NotificationsViewController.m */; };
 		CEC5A01817BDC46E001CF970 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A01717BDC46E001CF970 /* first.png */; };
 		CEC5A01A17BDC46E001CF970 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A01917BDC46E001CF970 /* first@2x.png */; };
-		CEC5A01D17BDC46E001CF970 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC5A01C17BDC46E001CF970 /* SecondViewController.m */; };
+		CEC5A01D17BDC46E001CF970 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC5A01C17BDC46E001CF970 /* ContactsViewController.m */; };
 		CEC5A01F17BDC46E001CF970 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A01E17BDC46E001CF970 /* second.png */; };
 		CEC5A02117BDC46E001CF970 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A02017BDC46E001CF970 /* second@2x.png */; };
-		CEC5A02417BDC46E001CF970 /* FirstViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A02217BDC46E001CF970 /* FirstViewController_iPhone.xib */; };
-		CEC5A02717BDC46E001CF970 /* FirstViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A02517BDC46E001CF970 /* FirstViewController_iPad.xib */; };
-		CEC5A02A17BDC46F001CF970 /* SecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A02817BDC46F001CF970 /* SecondViewController_iPhone.xib */; };
-		CEC5A02D17BDC46F001CF970 /* SecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A02B17BDC46F001CF970 /* SecondViewController_iPad.xib */; };
+		CEC5A02417BDC46E001CF970 /* NotificationsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A02217BDC46E001CF970 /* NotificationsViewController_iPhone.xib */; };
+		CEC5A02A17BDC46F001CF970 /* ContactsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A02817BDC46F001CF970 /* ContactsViewController_iPhone.xib */; };
+		CED8019217C76648006FA79E /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CED8018C17C76648006FA79E /* libTestFlight.a */; };
+		CED8019317C76648006FA79E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CED8018D17C76648006FA79E /* README.md */; };
+		CED8019417C76648006FA79E /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = CED8018E17C76648006FA79E /* release_notes.md */; };
+		CED8019617C76734006FA79E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CED8019517C76734006FA79E /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE7ACCEA17C5F4A500A12DC4 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
+		CE7ACCEB17C5F4A500A12DC4 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
+		CE7ACCEC17C5F4A500A12DC4 /* MeViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeViewController_iPhone.xib; sourceTree = "<group>"; };
+		CE7ACCF017C5F63400A12DC4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		CE7ACCF117C5F63400A12DC4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		CE7ACCF217C5F63400A12DC4 /* LoginViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController_iPhone.xib; sourceTree = "<group>"; };
 		CEC59FF917BDC46E001CF970 /* SchoolNotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolNotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC59FFC17BDC46E001CF970 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CEC59FFE17BDC46E001CF970 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -42,18 +54,23 @@
 		CEC5A00E17BDC46E001CF970 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CEC5A01017BDC46E001CF970 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CEC5A01217BDC46E001CF970 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		CEC5A01417BDC46E001CF970 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		CEC5A01517BDC46E001CF970 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		CEC5A01417BDC46E001CF970 /* NotificationsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
+		CEC5A01517BDC46E001CF970 /* NotificationsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationsViewController.m; sourceTree = "<group>"; };
 		CEC5A01717BDC46E001CF970 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		CEC5A01917BDC46E001CF970 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		CEC5A01B17BDC46E001CF970 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		CEC5A01C17BDC46E001CF970 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		CEC5A01B17BDC46E001CF970 /* ContactsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		CEC5A01C17BDC46E001CF970 /* ContactsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
 		CEC5A01E17BDC46E001CF970 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		CEC5A02017BDC46E001CF970 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
-		CEC5A02317BDC46E001CF970 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController_iPhone.xib; sourceTree = "<group>"; };
-		CEC5A02617BDC46E001CF970 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController_iPad.xib; sourceTree = "<group>"; };
-		CEC5A02917BDC46F001CF970 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController_iPhone.xib; sourceTree = "<group>"; };
-		CEC5A02C17BDC46F001CF970 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController_iPad.xib; sourceTree = "<group>"; };
+		CEC5A02317BDC46E001CF970 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NotificationsViewController_iPhone.xib; sourceTree = "<group>"; };
+		CEC5A02917BDC46F001CF970 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ContactsViewController_iPhone.xib; sourceTree = "<group>"; };
+		CED8018C17C76648006FA79E /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		CED8018D17C76648006FA79E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		CED8018E17C76648006FA79E /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		CED8018F17C76648006FA79E /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		CED8019017C76648006FA79E /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		CED8019117C76648006FA79E /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		CED8019517C76734006FA79E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,18 +78,90 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED8019617C76734006FA79E /* libz.dylib in Frameworks */,
 				CEC59FFD17BDC46E001CF970 /* UIKit.framework in Frameworks */,
 				CEC59FFF17BDC46E001CF970 /* Foundation.framework in Frameworks */,
 				CEC5A00117BDC46E001CF970 /* CoreGraphics.framework in Frameworks */,
+				CED8019217C76648006FA79E /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE7ACCE317C5F05800A12DC4 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				CEC5A01417BDC46E001CF970 /* NotificationsViewController.h */,
+				CEC5A01517BDC46E001CF970 /* NotificationsViewController.m */,
+				CEC5A02217BDC46E001CF970 /* NotificationsViewController_iPhone.xib */,
+			);
+			name = Notifications;
+			sourceTree = "<group>";
+		};
+		CE7ACCE417C5F06A00A12DC4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CEC5A01717BDC46E001CF970 /* first.png */,
+				CEC5A01917BDC46E001CF970 /* first@2x.png */,
+				CEC5A01E17BDC46E001CF970 /* second.png */,
+				CEC5A02017BDC46E001CF970 /* second@2x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CE7ACCE517C5F2BF00A12DC4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE7ACCEF17C5F62200A12DC4 /* Login */,
+				CE7ACCE917C5F47200A12DC4 /* Me */,
+				CE7ACCE717C5F30800A12DC4 /* Contacts */,
+				CE7ACCE317C5F05800A12DC4 /* Notifications */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CE7ACCE617C5F2CB00A12DC4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CE7ACCE717C5F30800A12DC4 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				CEC5A01B17BDC46E001CF970 /* ContactsViewController.h */,
+				CEC5A01C17BDC46E001CF970 /* ContactsViewController.m */,
+				CEC5A02817BDC46F001CF970 /* ContactsViewController_iPhone.xib */,
+			);
+			name = Contacts;
+			sourceTree = "<group>";
+		};
+		CE7ACCE917C5F47200A12DC4 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				CE7ACCEA17C5F4A500A12DC4 /* MeViewController.h */,
+				CE7ACCEB17C5F4A500A12DC4 /* MeViewController.m */,
+				CE7ACCEC17C5F4A500A12DC4 /* MeViewController_iPhone.xib */,
+			);
+			name = Me;
+			sourceTree = "<group>";
+		};
+		CE7ACCEF17C5F62200A12DC4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CE7ACCF017C5F63400A12DC4 /* LoginViewController.h */,
+				CE7ACCF117C5F63400A12DC4 /* LoginViewController.m */,
+				CE7ACCF217C5F63400A12DC4 /* LoginViewController_iPhone.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		CEC59FF017BDC46E001CF970 = {
 			isa = PBXGroup;
 			children = (
+				CED8018A17C76648006FA79E /* Components */,
 				CEC5A00217BDC46E001CF970 /* SchoolNotify */,
 				CEC59FFB17BDC46E001CF970 /* Frameworks */,
 				CEC59FFA17BDC46E001CF970 /* Products */,
@@ -90,6 +179,7 @@
 		CEC59FFB17BDC46E001CF970 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CED8019517C76734006FA79E /* libz.dylib */,
 				CEC59FFC17BDC46E001CF970 /* UIKit.framework */,
 				CEC59FFE17BDC46E001CF970 /* Foundation.framework */,
 				CEC5A00017BDC46E001CF970 /* CoreGraphics.framework */,
@@ -100,20 +190,11 @@
 		CEC5A00217BDC46E001CF970 /* SchoolNotify */ = {
 			isa = PBXGroup;
 			children = (
+				CE7ACCE617C5F2CB00A12DC4 /* Model */,
+				CE7ACCE517C5F2BF00A12DC4 /* View */,
+				CE7ACCE417C5F06A00A12DC4 /* Resources */,
 				CEC5A00B17BDC46E001CF970 /* AppDelegate.h */,
 				CEC5A00C17BDC46E001CF970 /* AppDelegate.m */,
-				CEC5A01417BDC46E001CF970 /* FirstViewController.h */,
-				CEC5A01517BDC46E001CF970 /* FirstViewController.m */,
-				CEC5A01717BDC46E001CF970 /* first.png */,
-				CEC5A01917BDC46E001CF970 /* first@2x.png */,
-				CEC5A01B17BDC46E001CF970 /* SecondViewController.h */,
-				CEC5A01C17BDC46E001CF970 /* SecondViewController.m */,
-				CEC5A01E17BDC46E001CF970 /* second.png */,
-				CEC5A02017BDC46E001CF970 /* second@2x.png */,
-				CEC5A02217BDC46E001CF970 /* FirstViewController_iPhone.xib */,
-				CEC5A02517BDC46E001CF970 /* FirstViewController_iPad.xib */,
-				CEC5A02817BDC46F001CF970 /* SecondViewController_iPhone.xib */,
-				CEC5A02B17BDC46F001CF970 /* SecondViewController_iPad.xib */,
 				CEC5A00317BDC46E001CF970 /* Supporting Files */,
 			);
 			path = SchoolNotify;
@@ -131,6 +212,28 @@
 				CEC5A01217BDC46E001CF970 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CED8018A17C76648006FA79E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				CED8018B17C76648006FA79E /* TestFlightSDK2 */,
+			);
+			name = Components;
+			path = SchoolNotify/components;
+			sourceTree = "<group>";
+		};
+		CED8018B17C76648006FA79E /* TestFlightSDK2 */ = {
+			isa = PBXGroup;
+			children = (
+				CED8018C17C76648006FA79E /* libTestFlight.a */,
+				CED8018D17C76648006FA79E /* README.md */,
+				CED8018E17C76648006FA79E /* release_notes.md */,
+				CED8018F17C76648006FA79E /* TestFlight+AsyncLogging.h */,
+				CED8019017C76648006FA79E /* TestFlight+ManualSessions.h */,
+				CED8019117C76648006FA79E /* TestFlight.h */,
+			);
+			path = TestFlightSDK2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,10 +295,12 @@
 				CEC5A01A17BDC46E001CF970 /* first@2x.png in Resources */,
 				CEC5A01F17BDC46E001CF970 /* second.png in Resources */,
 				CEC5A02117BDC46E001CF970 /* second@2x.png in Resources */,
-				CEC5A02417BDC46E001CF970 /* FirstViewController_iPhone.xib in Resources */,
-				CEC5A02717BDC46E001CF970 /* FirstViewController_iPad.xib in Resources */,
-				CEC5A02A17BDC46F001CF970 /* SecondViewController_iPhone.xib in Resources */,
-				CEC5A02D17BDC46F001CF970 /* SecondViewController_iPad.xib in Resources */,
+				CEC5A02417BDC46E001CF970 /* NotificationsViewController_iPhone.xib in Resources */,
+				CEC5A02A17BDC46F001CF970 /* ContactsViewController_iPhone.xib in Resources */,
+				CE7ACCEE17C5F4A500A12DC4 /* MeViewController_iPhone.xib in Resources */,
+				CE7ACCF417C5F63400A12DC4 /* LoginViewController_iPhone.xib in Resources */,
+				CED8019317C76648006FA79E /* README.md in Resources */,
+				CED8019417C76648006FA79E /* release_notes.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,8 +313,10 @@
 			files = (
 				CEC5A00917BDC46E001CF970 /* main.m in Sources */,
 				CEC5A00D17BDC46E001CF970 /* AppDelegate.m in Sources */,
-				CEC5A01617BDC46E001CF970 /* FirstViewController.m in Sources */,
-				CEC5A01D17BDC46E001CF970 /* SecondViewController.m in Sources */,
+				CEC5A01617BDC46E001CF970 /* NotificationsViewController.m in Sources */,
+				CEC5A01D17BDC46E001CF970 /* ContactsViewController.m in Sources */,
+				CE7ACCED17C5F4A500A12DC4 /* MeViewController.m in Sources */,
+				CE7ACCF317C5F63400A12DC4 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,36 +331,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		CEC5A02217BDC46E001CF970 /* FirstViewController_iPhone.xib */ = {
+		CEC5A02217BDC46E001CF970 /* NotificationsViewController_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CEC5A02317BDC46E001CF970 /* en */,
 			);
-			name = FirstViewController_iPhone.xib;
+			name = NotificationsViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
-		CEC5A02517BDC46E001CF970 /* FirstViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CEC5A02617BDC46E001CF970 /* en */,
-			);
-			name = FirstViewController_iPad.xib;
-			sourceTree = "<group>";
-		};
-		CEC5A02817BDC46F001CF970 /* SecondViewController_iPhone.xib */ = {
+		CEC5A02817BDC46F001CF970 /* ContactsViewController_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CEC5A02917BDC46F001CF970 /* en */,
 			);
-			name = SecondViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		CEC5A02B17BDC46F001CF970 /* SecondViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CEC5A02C17BDC46F001CF970 /* en */,
-			);
-			name = SecondViewController_iPad.xib;
+			name = ContactsViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -323,7 +414,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SchoolNotify/SchoolNotify-Prefix.pch";
 				INFOPLIST_FILE = "SchoolNotify/SchoolNotify-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/SchoolNotify/components/TestFlightSDK2\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -334,7 +431,13 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SchoolNotify/SchoolNotify-Prefix.pch";
 				INFOPLIST_FILE = "SchoolNotify/SchoolNotify-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/SchoolNotify/components/TestFlightSDK2\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -358,6 +461,7 @@
 				CEC5A03217BDC46F001CF970 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class LoginViewController;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) UITabBarController *tabBarController;
+@property (strong, nonatomic) LoginViewController *loginViewController;
 
 @end

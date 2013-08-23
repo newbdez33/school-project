@@ -1,25 +1,25 @@
 //
-//  SecondViewController.m
+//  FirstViewController.m
 //  SchoolNotify
 //
 //  Created by Jack on 16/08/13.
 //  Copyright (c) 2013 Salmonapps.com. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "NotificationsViewController.h"
 
-@interface SecondViewController ()
+@interface NotificationsViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation NotificationsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Second", @"Second");
-        self.tabBarItem.image = [UIImage imageNamed:@"second"];
+        self.title = NSLocalizedString(@"学校通知", @"通知");
+        self.tabBarItem.image = [UIImage imageNamed:@"first"];
     }
     return self;
 }

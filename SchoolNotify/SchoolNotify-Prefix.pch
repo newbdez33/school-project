@@ -12,3 +12,8 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+//([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+#define XIB(x) (YES?[NSString stringWithFormat:@"%@_iPhone", x]:[NSString stringWithFormat:@"%@_iPad", x])
+
+#define TESTFLIGHT_TOKEN @"59482e9c-896d-48b9-8796-57a16cfcad80"

@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  通知
 //  SchoolNotify
 //
 //  Created by Jack on 16/08/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface NotificationsViewController : UIViewController
 
 @end

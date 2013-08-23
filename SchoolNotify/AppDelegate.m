@@ -7,28 +7,42 @@
 //
 
 #import "AppDelegate.h"
+#import "TestFlight.h"
 
-#import "FirstViewController.h"
-
-#import "SecondViewController.h"
+#import "NotificationsViewController.h"
+#import "ContactsViewController.h"
+#import "MeViewController.h"
+#import "LoginViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    //testflight
+    [TestFlight takeOff:TESTFLIGHT_TOKEN];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    UIViewController *viewController1, *viewController2;
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController_iPhone" bundle:nil];
-        viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController_iPhone" bundle:nil];
-    } else {
-        viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController_iPad" bundle:nil];
-        viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController_iPad" bundle:nil];
-    }
+
+    NotificationsViewController *notificationsViewController = [[NotificationsViewController alloc] initWithNibName:XIB(@"NotificationsViewController") bundle:nil];
+    ContactsViewController *contactsViewController = [[ContactsViewController alloc] initWithNibName:XIB(@"ContactsViewController") bundle:nil];
+    MeViewController *meViewController = [[MeViewController alloc] initWithNibName:XIB(@"MeViewController") bundle:nil];
+    
+    UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:notificationsViewController];
+    UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:contactsViewController];
+    UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:meViewController];
+    
     self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = @[viewController1, viewController2];
-    self.window.rootViewController = self.tabBarController;
+    self.tabBarController.viewControllers = @[nav1, nav2, nav3];
+    
+    
+    //登陆初始化
+    self.loginViewController = [[LoginViewController alloc] initWithNibName:XIB(@"LoginViewController") bundle:nil];
+    UINavigationController *mainNavigationController = [[UINavigationController alloc] initWithRootViewController:self.loginViewController];
+    mainNavigationController.navigationBarHidden = YES;
+    
+    //self.window.rootViewController = self.tabBarController;
+    self.window.rootViewController = self.loginViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
