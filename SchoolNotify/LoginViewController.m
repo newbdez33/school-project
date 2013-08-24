@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "AppDelegate.h"
+#import "UserService.h"
 
 @interface LoginViewController ()
 
@@ -38,15 +39,26 @@
 
 #pragma mark - Actions
 - (IBAction)loginTouched:(id)sender {
-    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-    appDelegate.tabBarController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    appDelegate.tabBarController.modalPresentationStyle = UIModalPresentationCurrentContext;
-    if (YES) {
-        [self presentViewController:appDelegate.tabBarController animated:YES completion:^{
-            //
-        }];
-        return;
-    }
+    AppDelegate *app = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    app.tabBarController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    app.tabBarController.modalPresentationStyle = UIModalPresentationCurrentContext;
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        User *user = [UserService login:username.text password:password.text];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (user) {
+                app.currentUser = user;
+                [self presentViewController:app.tabBarController animated:YES completion:^{
+                    //
+                }];
+            }else {
+                MBAlertView *alert = [MBAlertView alertWithBody:@"用户名或密码错误" cancelTitle:@"OK" cancelBlock:nil];
+                [alert setBackgroundAlpha:0.8];
+                [alert addToDisplayQueue];
+            }
+
+        });
+    });
 }
 
 - (void)logout {

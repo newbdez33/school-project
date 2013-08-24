@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @class LoginViewController;
 
@@ -16,5 +17,6 @@
 
 @property (strong, nonatomic) UITabBarController *tabBarController;
 @property (strong, nonatomic) LoginViewController *loginViewController;
+@property (strong, nonatomic) User *currentUser;
 
 @end
