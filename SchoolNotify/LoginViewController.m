@@ -44,17 +44,31 @@
     app.tabBarController.modalPresentationStyle = UIModalPresentationCurrentContext;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
-        User *user = [UserService login:username.text password:password.text];
+        
+        NSError *err = nil;
+        User *user = [UserService login:username.text password:password.text error:&err];
+        
         dispatch_async(dispatch_get_main_queue(), ^{
-            if (user) {
-                app.currentUser = user;
-                [self presentViewController:app.tabBarController animated:YES completion:^{
-                    //
+            
+            if (err!=nil) {
+                
+                NSMutableString *error_str = [NSMutableString string];
+                [err.userInfo enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+                    NSString *errormsg = (NSString *)obj;
+                    [error_str appendFormat:@"%@\n", errormsg];
                 }];
-            }else {
-                MBAlertView *alert = [MBAlertView alertWithBody:@"用户名或密码错误" cancelTitle:@"OK" cancelBlock:nil];
+                
+                MBAlertView *alert = [MBAlertView alertWithBody:error_str cancelTitle:@"OK" cancelBlock:nil];
                 [alert setBackgroundAlpha:0.8];
                 [alert addToDisplayQueue];
+                
+            }else {
+                if (user) {
+                    app.currentUser = user;
+                    [self presentViewController:app.tabBarController animated:YES completion:^{
+                        //
+                    }];
+                }
             }
 
         });

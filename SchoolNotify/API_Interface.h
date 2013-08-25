@@ -10,7 +10,7 @@
 #define SchoolNotify_API_Interface_h
 
 //SERVER Domain
-#define API_HOST   @"http://127.0.0.1:89"
+#define API_HOST   @"http://schoolproject.salmonapps.com:8091"
 
 //API URL
 #define API_COMMAND_USER_LOGIN @"login.php"
@@ -18,6 +18,9 @@
 #define API_COMMAND_NOTIFICATION_CONTENT @""
 
 //KEYs
+#define API_KEY_SUCCESS @"success"
+#define API_KEY_ERROR_MESSAGE @"error_msg"
+
 #define API_KEY_USER_ID @"userid"
 #define API_KEY_USER_ROLE @"rold_id"
 #define API_KEY_USER_SCHOOL_ID @"school_id"

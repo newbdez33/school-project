@@ -11,7 +11,7 @@
 
 @interface UserService : NSObject
 
-+ (User *)login:(NSString *)username password:(NSString *)password;
++ (User *)login:(NSString *)username password:(NSString *)password error:(NSError **)error;
 + (void)logout;
 
 @end
