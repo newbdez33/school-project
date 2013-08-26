@@ -10,16 +10,16 @@
 
 @implementation User
 
-- (NSInteger)user_id {
-    return [[originData objectForKey:API_KEY_USER_ID] intValue];
+- (NSString *)user_id {
+    return NIL_STR([originData objectForKey:API_KEY_USER_ID]);
 }
 
-- (NSInteger)role_type {
-    return [[originData objectForKey:API_KEY_USER_ROLE] intValue];
+- (NSString *)role_type {
+    return NIL_STR([originData objectForKey:API_KEY_USER_ROLE]);
 }
 
-- (NSInteger)school_id {
-    return [[originData objectForKey:API_KEY_USER_SCHOOL_ID] intValue];
+- (NSString *)school_id {
+    return NIL_STR([originData objectForKey:API_KEY_USER_SCHOOL_ID]);
 }
 
 @end

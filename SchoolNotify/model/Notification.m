@@ -30,7 +30,8 @@
 
 //@property (nonatomic) BOOL need_reply;
 - (BOOL)need_reply {
-    return [[originData objectForKey:API_KEY_NOTIFICATION_NEED_REPLY] boolValue];
+    //is_reply：1：未回复， 2：已回复
+    return [[originData objectForKey:API_KEY_NOTIFICATION_NEED_REPLY] isEqualToString:@"2"]?YES:NO;
 }
 
 - (void)setNeed_reply:(BOOL)need_reply {

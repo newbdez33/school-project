@@ -11,14 +11,14 @@
 @interface User : Domain
 
 //userid:用户id
-@property (nonatomic) NSInteger user_id;
+@property (nonatomic) NSString *user_id;
 //role_id:用户权限
 //1：super user
 //2：学校/教务处权限
 //3：教师权限
 //4：家长/学生
-@property (nonatomic) NSInteger role_type;
+@property (nonatomic) NSString *role_type;
 //school_id:学校id
-@property (nonatomic) NSInteger school_id;
+@property (nonatomic) NSString *school_id;
 
 @end

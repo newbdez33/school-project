@@ -14,7 +14,7 @@
 @property (nonatomic, strong) NSString *message_id;
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic) BOOL need_reply;
-@property (nonatomic) NSInteger type;
+@property (nonatomic) NSString *type;
 @property (nonatomic, strong) NSDate *datetime;
 @property (nonatomic, strong) NotificationAddition *addition;
 

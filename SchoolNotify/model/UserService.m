@@ -43,7 +43,6 @@
         *error = [NSError errorWithDomain:@"LOGIN" code:500 userInfo:networkerror];
     }
     return nil;
-    return nil;
 }
 
 + (void)logout {
