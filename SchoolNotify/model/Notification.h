@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic) BOOL need_reply;
 @property (nonatomic) NSString *type;
-@property (nonatomic, strong) NSDate *datetime;
+@property (nonatomic, strong) NSString *datetime;
 @property (nonatomic, strong) NotificationAddition *addition;
 
 //是否需要合成一个发布者domain?

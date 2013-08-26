@@ -17,4 +17,9 @@
     return ret;
 }
 
+-(NSArray *) arrayFromJson{
+    NSError *errorJson;
+    NSArray *ret = [NSJSONSerialization JSONObjectWithData:[self dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:&errorJson];
+    return ret;
+}
 @end

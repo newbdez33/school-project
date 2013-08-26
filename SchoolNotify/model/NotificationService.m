@@ -7,10 +7,28 @@
 //
 
 #import "NotificationService.h"
+#import "AppDelegate.h"
+#import "ASIHTTPRequest.h"
 
 @implementation NotificationService
 
 + (NSArray *)fetchNewNotifications:(NSString *)last_message_id {
+    
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@&uid=%@&messageid=%@", API_HOST, API_COMMAND_NOTIFICATION_LIST, app.currentUser.user_id, last_message_id]];
+    
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    [request setRequestMethod:@"GET"];
+    [request startSynchronous];
+    NSError *request_error = [request error];
+    if (!request_error) {
+        NSString *response = [request responseString];
+        NSArray *data = [response arrayFromJson];
+        if (data) {
+            return data;
+        }
+    }
+    
     return nil;
 }
 

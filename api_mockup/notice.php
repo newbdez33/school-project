@@ -4,24 +4,22 @@ call_user_func("api_{$command}");
 
 function api_list() {
 	$ret = array();
-	$ret['success'] = true;
-	$ret['result'] = array();
-	$ret['result'][] = array(
+	$ret[] = array(
 		"messageid" => "1",
 		"content" => "通知1",
 		"teacherName" => "教师1",
 		"teacher_id" => "1",
 		"created_at" => "2013-08-24",
-		"is_reply" => true,
+		"is_reply" => "1",
 		"type" => "4"
 	);
-	$ret['result'][] = array(
+	$ret[] = array(
 		"messageid" => "2",
 		"content" => "通知2",
 		"teacherName" => "教师1",
 		"teacher_id" => "1",
 		"created_at" => "2013-08-24 10:00",
-		"is_reply" => false,
+		"is_reply" => "2",
 		"type" => "4"
 	);
 

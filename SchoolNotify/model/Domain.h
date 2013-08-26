@@ -12,6 +12,8 @@
     NSDictionary *originData;   //从服务器传来的原始数据
 }
 
+@property (nonatomic) NSInteger version;
+
 - (id)initWithData:(NSDictionary *)data;
 
 @end

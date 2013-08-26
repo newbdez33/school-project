@@ -10,4 +10,5 @@
 
 @interface NSString (JsonMethods)
 -(NSDictionary *) dictionaryFromJson;
+-(NSArray *) arrayFromJson;
 @end

@@ -57,4 +57,8 @@
     //
 }
 
+- (NSString *)datetime {
+    return NIL_STR([originData objectForKey:API_KEY_NOTIFICATION_DATETIME]);
+}
+
 @end

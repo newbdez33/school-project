@@ -14,7 +14,7 @@
 
 //API URL
 #define API_COMMAND_USER_LOGIN @"login.php"
-#define API_COMMAND_NOTIFICATION_LIST @"list"
+#define API_COMMAND_NOTIFICATION_LIST @"notice.php?mod=list"
 #define API_COMMAND_NOTIFICATION_CONTENT @""
 
 //KEYs

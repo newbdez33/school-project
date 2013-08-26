@@ -13,6 +13,7 @@
     #import <Foundation/Foundation.h>
     #import "MBHUDView.h"
     #import "API_Interface.h"
+    #import "Constants.h"
     #import "NSString+JsonMethods.h"
 #endif
 
