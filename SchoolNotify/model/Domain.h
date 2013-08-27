@@ -15,5 +15,6 @@
 @property (nonatomic) NSInteger version;
 
 - (id)initWithData:(NSDictionary *)data;
+- (NSMutableDictionary *)originData;
 
 @end

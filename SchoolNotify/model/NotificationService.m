@@ -34,9 +34,27 @@
     return nil;
 }
 
-+ (Notification *)fetchNotificationAddition:(Notification *)notification {
-    //加入 addition
-    return notification;
++ (NotificationAddition *)fetchNotificationAddition:(Notification *)notification {
+    
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@&uid=%@&messageid=%@&type=%@", API_HOST, API_COMMAND_NOTIFICATION_CONTENT, app.currentUser.user_id, notification.message_id, notification.type]];
+    
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+    [request setRequestMethod:@"GET"];
+    [request startSynchronous];
+    NSError *request_error = [request error];
+    if (!request_error) {
+        NSString *response = [request responseString];
+        NSDictionary *data = [response dictionaryFromJson];
+        if (data) {
+            return [[NotificationAddition alloc] initWithData:data];
+        }else {
+            NSLog(@"response incorrect:%@", response);
+        }
+    }
+    
+    return nil;
 }
 
 //发布消息

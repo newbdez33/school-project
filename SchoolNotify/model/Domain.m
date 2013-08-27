@@ -22,4 +22,8 @@
     return nil;
 }
 
+- (NSMutableDictionary *)originData {
+    return originData;
+}
+
 @end

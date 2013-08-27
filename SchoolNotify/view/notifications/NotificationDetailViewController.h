@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class Notification;
+
 @interface NotificationDetailViewController : UIViewController
+
+@property (nonatomic, strong) Notification *notication;
+
+- (IBAction)closeButtonTouched:(id)sender;
 
 @end

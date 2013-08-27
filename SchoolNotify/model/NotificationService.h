@@ -15,7 +15,7 @@
 + (NSArray *)fetchNewNotifications:(NSString *)last_message_id;
 
 //得到消息内容
-+ (Notification *)fetchNotificationAddition:(Notification *)notification;
++ (NotificationAddition *)fetchNotificationAddition:(Notification *)notification;
 
 //发布消息
 /*

@@ -11,6 +11,8 @@
 #import "NotificationCell.h"
 #import "Util.h"
 #import "MBProgressHUD.h"
+#import "NotificationDetailViewController.h"
+#import "AppDelegate.h"
 
 @interface NotificationsViewController ()
 
@@ -172,6 +174,30 @@
     NotificationCell *cell = [[[NSBundle mainBundle] loadNibNamed:XIB(@"NotificationCell") owner:self options:nil] lastObject];
     // cell的高度
     return CGRectGetHeight(cell.frame);
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NotificationDetailViewController *detailViewController = [[NotificationDetailViewController alloc] initWithNibName:XIB(@"NotificationDetailViewController") bundle:nil];
+    
+    Notification *noti = [[Notification alloc] initWithData:[self.notificationList objectAtIndex:indexPath.row]];
+    detailViewController.notication = noti;
+    detailViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+    //处理已读
+    noti.is_read = YES;
+    [self.notificationList replaceObjectAtIndex:indexPath.row withObject:noti.originData];
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [Util saveNotificationList_v1:self.notificationList];
+    
+
+    
+    [app.tabBarController presentViewController:detailViewController animated:YES completion:^{
+        //
+    }];
+    
+    
 }
 
 #pragma mark -

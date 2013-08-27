@@ -45,7 +45,34 @@ function api_list() {
 	exit;
 }
 
+//notice.php?mod=view&uid=xxx&messageid=xxx&type=xxx
 function api_view() {
+/*
+{
+score_array:[
+{"kcName" : "xxxx","score" : "xxx"}
+{"kcName" : "xxxx","score" : "xxx"}
+{"kcName" : "xxxx","score" : "xxx"}
+]
+reply_array:[
+{hfid:"", content:"内容一", created_at:"日期一"},
+{hfid:"", content:"内容二", created_at:"日期二"}
+]
+}
+*/
+	$ret = array();
+	$ret['score_array'] = array(
+		array("kcName"=>"语文", "score"=>"90分"),
+		array("kcName"=>"数学", "score"=>"100分"),
+		array("kcName"=>"英文", "score"=>"0分"),
+		array("kcName"=>"总文", "score"=>"190分")
+	);
+	$ret['reply_array'] = array(
+		array("hfid"=>"1", "content"=>"内容1", "created_at"=>"2013-09-08 07:06:05"),
+		array("hfid"=>"2", "content"=>"内容2", "created_at"=>"2013-10-08 07:06:05")
+	);
+
+	echo json_encode($ret);
 	exit;
 }
 
