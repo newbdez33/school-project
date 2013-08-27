@@ -15,7 +15,7 @@
     self = [super init];
     if (self!=nil && data!=nil) {
         self.version = APP_DOMAIN_VERSION;   //CURRENT_VERSION
-        originData = [[NSDictionary alloc] initWithDictionary:data];
+        originData = [[NSMutableDictionary alloc] initWithDictionary:data];
         return self;
     }
     

@@ -13,5 +13,6 @@
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) IBOutlet UILabel *publisherLabel;
 @property (nonatomic, strong) IBOutlet UILabel *publishDateTime;
+@property (nonatomic, strong) IBOutlet UILabel *replyStatusLabel;
 
 @end

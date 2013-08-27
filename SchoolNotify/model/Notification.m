@@ -10,6 +10,27 @@
 
 @implementation Notification
 
+- (id)initWithData:(NSDictionary *)data {
+    
+    self = [super initWithData:data];
+    if (self!=nil) {
+        if ([originData objectForKey:@"is_read"]==nil) {
+            self.is_read = NO;
+        }
+        return self;
+    }
+    
+    return nil;
+}
+
+- (BOOL)is_read {
+    return [[originData objectForKey:@"is_read"] boolValue];
+}
+
+- (void)setIs_read:(BOOL)is_read {
+    [originData setValue:[NSNumber numberWithBool:is_read] forKey:@"is_read"];
+}
+
 //@property (nonatomic, strong) NSString *message_id;
 - (NSString *)message_id {
     return NIL_STR([originData objectForKey:API_KEY_NOTIFICATION_MESSAGE_ID]);
@@ -29,12 +50,13 @@
 }
 
 //@property (nonatomic) BOOL need_reply;
-- (BOOL)need_reply {
+- (NSString *)need_reply {
     //is_reply：1：未回复， 2：已回复
-    return [[originData objectForKey:API_KEY_NOTIFICATION_NEED_REPLY] isEqualToString:@"2"]?YES:NO;
+    return NIL_STR([originData objectForKey:API_KEY_NOTIFICATION_NEED_REPLY]);
+
 }
 
-- (void)setNeed_reply:(BOOL)need_reply {
+- (void)setNeed_reply:(NSString *)need_reply {
     //
 }
 

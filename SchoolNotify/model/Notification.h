@@ -11,10 +11,12 @@
 
 @interface Notification : Domain
 
+@property (nonatomic) BOOL is_read;
+
 @property (nonatomic, strong) NSString *message_id;
 @property (nonatomic, strong) NSString *content;
-@property (nonatomic) BOOL need_reply;
-@property (nonatomic) NSString *type;
+@property (nonatomic, strong) NSString *need_reply;
+@property (nonatomic, strong) NSString *type;
 @property (nonatomic, strong) NSString *datetime;
 @property (nonatomic, strong) NotificationAddition *addition;
 

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Domain : NSObject {
-    NSDictionary *originData;   //从服务器传来的原始数据
+    NSMutableDictionary *originData;   //从服务器传来的原始数据
 }
 
 @property (nonatomic) NSInteger version;

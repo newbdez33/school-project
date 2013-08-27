@@ -80,6 +80,8 @@
 		CED8023117CB9430006FA79E /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CED8022817CB9430006FA79E /* whiteArrow.png */; };
 		CED8023217CB9430006FA79E /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CED8022917CB9430006FA79E /* whiteArrow@2x.png */; };
 		CED8023617CB95F0006FA79E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CED8023517CB95F0006FA79E /* MBProgressHUD.m */; };
+		CED8024017CC3EBC006FA79E /* NotificationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED8023E17CC3EBC006FA79E /* NotificationDetailViewController.m */; };
+		CED8024117CC3EBC006FA79E /* NotificationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED8023F17CC3EBC006FA79E /* NotificationDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -209,6 +211,9 @@
 		CED8022917CB9430006FA79E /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
 		CED8023417CB95F0006FA79E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		CED8023517CB95F0006FA79E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		CED8023D17CC3EBB006FA79E /* NotificationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationDetailViewController.h; path = view/notifications/NotificationDetailViewController.h; sourceTree = "<group>"; };
+		CED8023E17CC3EBC006FA79E /* NotificationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotificationDetailViewController.m; path = view/notifications/NotificationDetailViewController.m; sourceTree = "<group>"; };
+		CED8023F17CC3EBC006FA79E /* NotificationDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationDetailViewController.xib; path = view/notifications/NotificationDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +245,9 @@
 				CED8021417CAFFD7006FA79E /* NotificationCell.h */,
 				CED8021517CAFFD7006FA79E /* NotificationCell.m */,
 				CED8021717CB0006006FA79E /* NotificationCell_iPhone.xib */,
+				CED8023D17CC3EBB006FA79E /* NotificationDetailViewController.h */,
+				CED8023E17CC3EBC006FA79E /* NotificationDetailViewController.m */,
+				CED8023F17CC3EBC006FA79E /* NotificationDetailViewController.xib */,
 			);
 			name = Notifications;
 			sourceTree = "<group>";
@@ -662,6 +670,7 @@
 				CED8023017CB9430006FA79E /* grayArrow@2x.png in Resources */,
 				CED8023117CB9430006FA79E /* whiteArrow.png in Resources */,
 				CED8023217CB9430006FA79E /* whiteArrow@2x.png in Resources */,
+				CED8024117CC3EBC006FA79E /* NotificationDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,6 +722,7 @@
 				CED8021B17CB5D14006FA79E /* Util.m in Sources */,
 				CED8022A17CB9430006FA79E /* EGORefreshTableHeaderView.m in Sources */,
 				CED8023617CB95F0006FA79E /* MBProgressHUD.m in Sources */,
+				CED8024017CC3EBC006FA79E /* NotificationDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

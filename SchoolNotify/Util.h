@@ -17,4 +17,6 @@
 + (BOOL)saveNotificationList_v1:(NSArray *)list;
 + (NSArray *)loadNotificationList_v1;
 
++(UIColor*)colorWithHexString:(NSString*)hex;
+
 @end

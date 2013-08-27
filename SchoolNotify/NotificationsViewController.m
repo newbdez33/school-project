@@ -38,13 +38,23 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         
-        Notification *last_notification = [[Notification alloc] initWithData:[self.notificationList lastObject]];
-        NSArray *notifications = [NotificationService fetchNewNotifications:last_notification.message_id];
+        NSString *last_message_id = nil;
+        if (self.notificationList.count>0) {
+            Notification *last_notification = [[Notification alloc] initWithData:[self.notificationList objectAtIndex:0]];
+            last_message_id = last_notification.message_id;
+        }else {
+            last_message_id = @"";
+        }
+        
+        NSArray *notifications = [NotificationService fetchNewNotifications:last_message_id];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if (notifications!=nil && notifications.count>0) {
-                [self.notificationList addObjectsFromArray:notifications];
+                NSLog(@"n:%@", notifications);
+                NSIndexSet *idx = [[NSIndexSet alloc] initWithIndex:0];
+                [self.notificationList insertObjects:notifications atIndexes:idx];
+                [Util saveNotificationList_v1:self.notificationList];
             }
             
             [notificationTableView reloadData];
@@ -121,6 +131,16 @@
     return self.notificationList.count;
 }
 
+- (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath
+{
+    Notification *notification = [[Notification alloc] initWithData:[self.notificationList objectAtIndex:indexPath.row]];
+    if (notification.is_read) {
+        cell.backgroundColor = [UIColor whiteColor];        
+    }else {
+        cell.backgroundColor = [Util colorWithHexString:@"FFFFF0"];
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"NotificationCell";
@@ -130,14 +150,19 @@
         cell = [[[NSBundle mainBundle] loadNibNamed:XIB(@"NotificationCell") owner:self options:nil] lastObject];
     }
     
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    
     Notification *notification = [[Notification alloc] initWithData:[self.notificationList objectAtIndex:indexPath.row]];
-    NSLog(@"notification :%@", notification);
     cell.titleLabel.text = notification.content;
     cell.publisherLabel.text = notification.publisher_name;
     cell.publishDateTime.text = notification.datetime;
     
-    if (notification.need_reply) {  //TODO
-        [cell setBackgroundColor:[UIColor grayColor]];
+    if ([notification.need_reply isEqualToString:API_KEY_NOTIFICATION_NEED_REPLY_NEED_REPLY]) {
+        cell.replyStatusLabel.text = @"需要回复";
+    }else if ([notification.need_reply isEqualToString:API_KEY_NOTIFICATION_NEED_REPLY_DID_REPLY]) {
+        cell.replyStatusLabel.text = @"已回复";
+    }else {
+        cell.replyStatusLabel.text = @"";
     }
     
     return cell;

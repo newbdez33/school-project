@@ -26,6 +26,8 @@
         NSArray *data = [response arrayFromJson];
         if (data) {
             return data;
+        }else {
+            NSLog(@"response incorrect:%@", response);
         }
     }
     
