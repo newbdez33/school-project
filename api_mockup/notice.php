@@ -77,7 +77,7 @@ reply_array:[
 }
 
 function api_reply() {
-	exit;
+	$ret = array("success"=>true);
 }
 
 function api_add() {
