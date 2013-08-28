@@ -54,8 +54,13 @@
             
             if (notifications!=nil && notifications.count>0) {
                 NSLog(@"n:%@", notifications);
-                NSIndexSet *idx = [[NSIndexSet alloc] initWithIndex:0];
-                [self.notificationList insertObjects:notifications atIndexes:idx];
+                if (self.notificationList.count>0) {
+                    NSIndexSet *idx = [[NSIndexSet alloc] initWithIndex:0];
+                    [self.notificationList insertObjects:notifications atIndexes:idx];
+                }else {
+                    self.notificationList = [NSMutableArray arrayWithArray:notifications];
+                }
+
                 [Util saveNotificationList_v1:self.notificationList];
             }
             

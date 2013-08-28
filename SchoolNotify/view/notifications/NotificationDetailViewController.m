@@ -323,7 +323,7 @@
     CGRect ctrlFrame = [activeInputCtrl_.superview convertRect:activeRect toView:self.view];
     
     if (!CGRectContainsPoint(aRect, CGPointMake(ctrlFrame.origin.x, ctrlFrame.origin.y + ctrlFrame.size.height)) ) {
-        int offset = ctrlFrame.origin.y + ctrlFrame.size.height - aRect.size.height + 10;
+        int offset = ctrlFrame.origin.y + ctrlFrame.size.height - aRect.size.height + 20;
         
         CGPoint scrollPoint = CGPointMake(0.0, scrollView.contentOffset.y + offset);
         [scrollView setContentOffset:scrollPoint animated:YES];
