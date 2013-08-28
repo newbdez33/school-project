@@ -78,6 +78,7 @@ reply_array:[
 
 function api_reply() {
 	$ret = array("success"=>true);
+	echo json_encode($ret);
 }
 
 function api_add() {
