@@ -10,7 +10,11 @@
 
 @class Notification;
 
-@interface NotificationDetailViewController : UIViewController
+@interface NotificationDetailViewController : UIViewController {
+    IBOutlet UILabel *contentLabel;
+    IBOutlet UIScrollView *scrollView;
+    
+}
 
 @property (nonatomic, strong) Notification *notication;
 

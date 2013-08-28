@@ -12,10 +12,10 @@ function api_list() {
 		$next_id = $_REQUEST['messageid']+1;
 		$ret[] = array(
 			"messageid" => "{$next_id}",
-			"content" => "通知".$next_id,
+			"content" => "通知".$next_id."拉姆塞梅开二度 阿森纳总分5-0连16年进正赛",
 			"teacherName" => "张主任",
 			"teacher_id" => "1",
-			"created_at" => date("Y-m-d H:i:s"),
+			"created_at" => date("Y-m-d H:i"),
 			"is_reply" => "1",
 			"type" => "4"
 		);
