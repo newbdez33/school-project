@@ -105,6 +105,8 @@
 {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationUpdated:) name:NOTIFICATION_NAME_NOTIFICATION_UPDATED object:nil];
+    
     [self configToolbar];
     
     [self loadData];
@@ -116,6 +118,25 @@
 		_refreshHeaderView = view;
 		
 	}
+}
+- (void)notificationUpdated:(NSNotification *)notif {
+    NSDictionary *data = notif.userInfo;
+    Notification *n = [[Notification alloc] initWithData:data];
+    NSString *message_id = n.message_id;
+    
+    for (NSDictionary *obj in self.notificationList) {
+        Notification *cu = [[Notification alloc] initWithData:obj];
+        if ([cu.message_id isEqualToString:message_id]) {
+            cu.need_reply = API_KEY_NOTIFICATION_NEED_REPLY_DID_REPLY;
+            NSInteger idx = [self.notificationList indexOfObject:obj];
+            [self.notificationList replaceObjectAtIndex:idx withObject:cu.originData];
+            [Util saveNotificationList_v1:self.notificationList];
+            break;
+        }
+    }
+    
+    [notificationTableView reloadData];
+
 }
 
 - (void)publishNotificationButtonTouched:(id)sender {
@@ -191,10 +212,8 @@
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     [Util saveNotificationList_v1:self.notificationList];
     
-
-    
     [app.tabBarController presentViewController:detailViewController animated:YES completion:^{
-        //
+        
     }];
     
     

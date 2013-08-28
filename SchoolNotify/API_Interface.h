@@ -16,6 +16,7 @@
 #define API_COMMAND_USER_LOGIN @"login.php"
 #define API_COMMAND_NOTIFICATION_LIST @"notice.php?mod=list"
 #define API_COMMAND_NOTIFICATION_CONTENT @"notice.php?mod=view"
+#define API_COMMAND_NOTIFICATION_REPLY @"notice.php?mod=reply"
 
 //KEYs
 #define API_KEY_SUCCESS @"success"

@@ -10,13 +10,18 @@ function api_list() {
 
 	if (is_numeric($_REQUEST['messageid'])) {
 		$next_id = $_REQUEST['messageid']+1;
+		$need_reply = "1";
+		$f = "replies/replies_{$next_id}";
+		if (file_exists($f)) {
+			$need_reply = "2";
+		}
 		$ret[] = array(
 			"messageid" => "{$next_id}",
 			"content" => "通知".$next_id."拉姆塞梅开二度 阿森纳总分5-0连16年进正赛",
 			"teacherName" => "张主任",
 			"teacher_id" => "1",
 			"created_at" => date("Y-m-d H:i"),
-			"is_reply" => "1",
+			"is_reply" => $need_reply,
 			"type" => "4"
 		);
 	}else {
@@ -27,7 +32,7 @@ function api_list() {
 			"teacherName" => "教师1",
 			"teacher_id" => "1",
 			"created_at" => "2013-08-24 10:00",
-			"is_reply" => "2",
+			"is_reply" => "0",
 			"type" => "4"
 		);
 		$ret[] = array(
@@ -67,10 +72,16 @@ reply_array:[
 		array("kcName"=>"英文", "score"=>"0分"),
 		array("kcName"=>"总文", "score"=>"190分")
 	);
-	$ret['reply_array'] = array(
-		array("hfid"=>"1", "content"=>"内容1", "created_at"=>"2013-09-08 07:06:05"),
-		array("hfid"=>"2", "content"=>"内容2", "created_at"=>"2013-10-08 07:06:05")
-	);
+
+	$message_id = $_REQUEST['messageid'];
+
+	$f = "replies/replies_{$message_id}";
+	if (file_exists($f)) {
+		$replies = file_get_contents($f);
+		if ($replies!="") {
+			$ret['reply_array'] = unserialize($replies);
+		}
+	}
 
 	echo json_encode($ret);
 	exit;
@@ -78,6 +89,24 @@ reply_array:[
 
 function api_reply() {
 	$ret = array("success"=>true);
+
+	$message_id = $_REQUEST['notice_id'];
+	
+	$rp = array();
+
+	$f = "replies/replies_{$message_id}";
+	if(file_exists($f)) {
+		$replies = file_get_contents($f);
+		if ($replies!="") {
+			$rp = unserialize($replies);
+		}
+	}
+
+
+	$rp[] = array("hfid"=>"0", "content"=>$_REQUEST['content'], "created_at"=>date("Y-m-d H:i"));
+
+	file_put_contents($f, serialize($rp));
+
 	echo json_encode($ret);
 }
 

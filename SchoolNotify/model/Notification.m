@@ -57,7 +57,7 @@
 }
 
 - (void)setNeed_reply:(NSString *)need_reply {
-    //
+    [originData setObject:need_reply forKey:API_KEY_NOTIFICATION_NEED_REPLY];
 }
 
 

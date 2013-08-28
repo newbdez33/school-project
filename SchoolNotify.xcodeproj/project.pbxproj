@@ -834,6 +834,8 @@
 		CEC5A03217BDC46F001CF970 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: JIE ZHANG (72T2SXUWHC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: JIE ZHANG (72T2SXUWHC)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SchoolNotify/SchoolNotify-Prefix.pch";
 				INFOPLIST_FILE = "SchoolNotify/SchoolNotify-Info.plist";
@@ -843,6 +845,8 @@
 					"\"$(SRCROOT)/SchoolNotify/components/TestFlightSDK2\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0EC1EB79-9B21-45B1-8A87-763479691092";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0EC1EB79-9B21-45B1-8A87-763479691092";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

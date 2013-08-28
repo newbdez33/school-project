@@ -9,6 +9,7 @@
 #import "NotificationService.h"
 #import "AppDelegate.h"
 #import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
 
 @implementation NotificationService
 
@@ -81,7 +82,34 @@
  content:回复内容"
 */
 + (BOOL)postReply:(Notification *)notification content:(NSString *)content {
+    
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", API_HOST, API_COMMAND_NOTIFICATION_REPLY]];
+    
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request setPostValue:app.currentUser.user_id forKey:@"uid"];
+    [request setPostValue:notification.message_id forKey:@"notice_id"];
+    [request setPostValue:content forKey:@"content"];
+    [request startSynchronous];
+    NSError *request_error = [request error];
+    if (!request_error) {
+        NSString *response = [request responseString];
+        NSDictionary *data = [response dictionaryFromJson];
+        if (data) {
+            if ([[data objectForKey:@"success"] boolValue]) {
+                return YES;
+            }else {
+                return NO;
+            }
+        }else {
+            NSLog(@"response incorrect:%@", response);
+            return NO;
+        }
+    }
+    
     return NO;
+
 }
 
 @end
