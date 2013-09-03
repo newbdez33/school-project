@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "AppDelegate.h"
 #import "UserService.h"
+#import "MBProgressHUD.h"
 
 @interface LoginViewController ()
 
@@ -43,6 +44,7 @@
     app.tabBarController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     app.tabBarController.modalPresentationStyle = UIModalPresentationCurrentContext;
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         
         NSError *err = nil;
@@ -70,6 +72,8 @@
                     }];
                 }
             }
+            
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 
         });
     });
