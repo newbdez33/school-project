@@ -80,7 +80,10 @@
 }
 
 - (void)logout {
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:^{
+        AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        [app.tabBarController setSelectedIndex:0];
+    }];
 }
 
 @end

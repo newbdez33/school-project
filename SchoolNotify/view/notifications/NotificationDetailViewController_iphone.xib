@@ -54,10 +54,14 @@
 								<reference key="IBUINavigationBar" ref="858360262"/>
 								<string key="IBUITitle">通知详细内容</string>
 								<object class="IBUIBarButtonItem" key="IBUILeftBarButtonItem" id="938067720">
-									<string key="IBUITitle">关闭</string>
+									<string key="IBUITitle">返回</string>
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 									<int key="IBUIStyle">1</int>
 									<reference key="IBUINavigationItem" ref="51079603"/>
+									<object class="NSColor" key="IBUITintColor">
+										<int key="NSColorSpace">3</int>
+										<bytes key="NSWhite">MC4zMzMzMzMzMzMzAA</bytes>
+									</object>
 								</object>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
