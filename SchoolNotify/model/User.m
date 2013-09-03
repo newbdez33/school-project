@@ -14,7 +14,7 @@
     return NIL_STR([originData objectForKey:API_KEY_USER_ID]);
 }
 
-- (NSString *)role_type {
+- (NSString *)role_id {
     return NIL_STR([originData objectForKey:API_KEY_USER_ROLE]);
 }
 

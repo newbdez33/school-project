@@ -17,7 +17,7 @@
 //2：学校/教务处权限
 //3：教师权限
 //4：家长/学生
-@property (nonatomic) NSString *role_type;
+@property (nonatomic) NSString *role_id;
 //school_id:学校id
 @property (nonatomic) NSString *school_id;
 

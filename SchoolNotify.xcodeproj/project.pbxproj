@@ -7,10 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE7ACCED17C5F4A500A12DC4 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7ACCEB17C5F4A500A12DC4 /* MeViewController.m */; };
-		CE7ACCEE17C5F4A500A12DC4 /* MeViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7ACCEC17C5F4A500A12DC4 /* MeViewController_iPhone.xib */; };
-		CE7ACCF317C5F63400A12DC4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE7ACCF117C5F63400A12DC4 /* LoginViewController.m */; };
-		CE7ACCF417C5F63400A12DC4 /* LoginViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7ACCF217C5F63400A12DC4 /* LoginViewController_iPhone.xib */; };
+		CE95B1E417D61E040024008E /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = CE95B1E317D61E040024008E /* Contact.m */; };
+		CE95B1E717D6224A0024008E /* ContactService.m in Sources */ = {isa = PBXBuildFile; fileRef = CE95B1E617D6224A0024008E /* ContactService.m */; };
+		CE95B1ED17D627B60024008E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = CE95B1EC17D627B60024008E /* Util.m */; };
+		CE95B1F117D627D30024008E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE95B1EF17D627D30024008E /* LoginViewController.m */; };
+		CE95B1F217D627D30024008E /* LoginViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95B1F017D627D30024008E /* LoginViewController_iPhone.xib */; };
+		CE95B1F617D627E40024008E /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE95B1F417D627E40024008E /* MeViewController.m */; };
+		CE95B1F717D627E40024008E /* MeViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95B1F517D627E40024008E /* MeViewController_iPhone.xib */; };
+		CE95B1FD17D628540024008E /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE95B1F917D628540024008E /* ContactCell.m */; };
+		CE95B1FE17D628540024008E /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE95B1FB17D628540024008E /* ContactsViewController.m */; };
+		CE95B1FF17D628540024008E /* ContactCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95B1FC17D628540024008E /* ContactCell_iPhone.xib */; };
+		CE95B20217D6286A0024008E /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE95B20117D6286A0024008E /* NotificationsViewController.m */; };
+		CE95B20717D6287D0024008E /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = CE95B20317D6287D0024008E /* second.png */; };
+		CE95B20817D6287D0024008E /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE95B20417D6287D0024008E /* second@2x.png */; };
+		CE95B20917D6287D0024008E /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = CE95B20517D6287D0024008E /* first.png */; };
+		CE95B20A17D6287D0024008E /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE95B20617D6287D0024008E /* first@2x.png */; };
+		CE95B20D17D62E0F0024008E /* ContactsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95B20B17D62E0F0024008E /* ContactsViewController_iPhone.xib */; };
 		CEC59FFD17BDC46E001CF970 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC59FFC17BDC46E001CF970 /* UIKit.framework */; };
 		CEC59FFF17BDC46E001CF970 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC59FFE17BDC46E001CF970 /* Foundation.framework */; };
 		CEC5A00117BDC46E001CF970 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC5A00017BDC46E001CF970 /* CoreGraphics.framework */; };
@@ -20,14 +32,7 @@
 		CEC5A00F17BDC46E001CF970 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A00E17BDC46E001CF970 /* Default.png */; };
 		CEC5A01117BDC46E001CF970 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A01017BDC46E001CF970 /* Default@2x.png */; };
 		CEC5A01317BDC46E001CF970 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A01217BDC46E001CF970 /* Default-568h@2x.png */; };
-		CEC5A01617BDC46E001CF970 /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC5A01517BDC46E001CF970 /* NotificationsViewController.m */; };
-		CEC5A01817BDC46E001CF970 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A01717BDC46E001CF970 /* first.png */; };
-		CEC5A01A17BDC46E001CF970 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A01917BDC46E001CF970 /* first@2x.png */; };
-		CEC5A01D17BDC46E001CF970 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC5A01C17BDC46E001CF970 /* ContactsViewController.m */; };
-		CEC5A01F17BDC46E001CF970 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A01E17BDC46E001CF970 /* second.png */; };
-		CEC5A02117BDC46E001CF970 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A02017BDC46E001CF970 /* second@2x.png */; };
 		CEC5A02417BDC46E001CF970 /* NotificationsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A02217BDC46E001CF970 /* NotificationsViewController_iPhone.xib */; };
-		CEC5A02A17BDC46F001CF970 /* ContactsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A02817BDC46F001CF970 /* ContactsViewController_iPhone.xib */; };
 		CED8019217C76648006FA79E /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CED8018C17C76648006FA79E /* libTestFlight.a */; };
 		CED8019317C76648006FA79E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CED8018D17C76648006FA79E /* README.md */; };
 		CED8019417C76648006FA79E /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = CED8018E17C76648006FA79E /* release_notes.md */; };
@@ -69,7 +74,6 @@
 		CED8020F17C8FE70006FA79E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED8020E17C8FE70006FA79E /* QuartzCore.framework */; };
 		CED8021617CAFFD7006FA79E /* NotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CED8021517CAFFD7006FA79E /* NotificationCell.m */; };
 		CED8021817CB0007006FA79E /* NotificationCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED8021717CB0006006FA79E /* NotificationCell_iPhone.xib */; };
-		CED8021B17CB5D14006FA79E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = CED8021A17CB5D12006FA79E /* Util.m */; };
 		CED8022A17CB9430006FA79E /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CED8022017CB9430006FA79E /* EGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CED8022B17CB9430006FA79E /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CED8022217CB9430006FA79E /* blackArrow.png */; };
 		CED8022C17CB9430006FA79E /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CED8022317CB9430006FA79E /* blackArrow@2x.png */; };
@@ -85,12 +89,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CE7ACCEA17C5F4A500A12DC4 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
-		CE7ACCEB17C5F4A500A12DC4 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
-		CE7ACCEC17C5F4A500A12DC4 /* MeViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeViewController_iPhone.xib; sourceTree = "<group>"; };
-		CE7ACCF017C5F63400A12DC4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		CE7ACCF117C5F63400A12DC4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		CE7ACCF217C5F63400A12DC4 /* LoginViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController_iPhone.xib; sourceTree = "<group>"; };
+		CE95B1E217D61E040024008E /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Contact.h; path = model/Contact.h; sourceTree = "<group>"; };
+		CE95B1E317D61E040024008E /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Contact.m; path = model/Contact.m; sourceTree = "<group>"; };
+		CE95B1E517D6224A0024008E /* ContactService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactService.h; path = model/ContactService.h; sourceTree = "<group>"; };
+		CE95B1E617D6224A0024008E /* ContactService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactService.m; path = model/ContactService.m; sourceTree = "<group>"; };
+		CE95B1EB17D627B60024008E /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Util.h; path = model/Util.h; sourceTree = "<group>"; };
+		CE95B1EC17D627B60024008E /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Util.m; path = model/Util.m; sourceTree = "<group>"; };
+		CE95B1EE17D627D30024008E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = view/login/LoginViewController.h; sourceTree = "<group>"; };
+		CE95B1EF17D627D30024008E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = view/login/LoginViewController.m; sourceTree = "<group>"; };
+		CE95B1F017D627D30024008E /* LoginViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginViewController_iPhone.xib; path = view/login/LoginViewController_iPhone.xib; sourceTree = "<group>"; };
+		CE95B1F317D627E40024008E /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MeViewController.h; path = view/me/MeViewController.h; sourceTree = "<group>"; };
+		CE95B1F417D627E40024008E /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MeViewController.m; path = view/me/MeViewController.m; sourceTree = "<group>"; };
+		CE95B1F517D627E40024008E /* MeViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MeViewController_iPhone.xib; path = view/me/MeViewController_iPhone.xib; sourceTree = "<group>"; };
+		CE95B1F817D628540024008E /* ContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactCell.h; path = view/contacts/ContactCell.h; sourceTree = "<group>"; };
+		CE95B1F917D628540024008E /* ContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactCell.m; path = view/contacts/ContactCell.m; sourceTree = "<group>"; };
+		CE95B1FA17D628540024008E /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactsViewController.h; path = view/contacts/ContactsViewController.h; sourceTree = "<group>"; };
+		CE95B1FB17D628540024008E /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactsViewController.m; path = view/contacts/ContactsViewController.m; sourceTree = "<group>"; };
+		CE95B1FC17D628540024008E /* ContactCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactCell_iPhone.xib; path = view/contacts/ContactCell_iPhone.xib; sourceTree = "<group>"; };
+		CE95B20017D6286A0024008E /* NotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationsViewController.h; path = view/notifications/NotificationsViewController.h; sourceTree = "<group>"; };
+		CE95B20117D6286A0024008E /* NotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotificationsViewController.m; path = view/notifications/NotificationsViewController.m; sourceTree = "<group>"; };
+		CE95B20317D6287D0024008E /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = second.png; path = resources/second.png; sourceTree = "<group>"; };
+		CE95B20417D6287D0024008E /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "second@2x.png"; path = "resources/second@2x.png"; sourceTree = "<group>"; };
+		CE95B20517D6287D0024008E /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = resources/first.png; sourceTree = "<group>"; };
+		CE95B20617D6287D0024008E /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "first@2x.png"; path = "resources/first@2x.png"; sourceTree = "<group>"; };
+		CE95B20C17D62E0F0024008E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ContactsViewController_iPhone.xib; sourceTree = "<group>"; };
 		CEC59FF917BDC46E001CF970 /* SchoolNotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolNotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC59FFC17BDC46E001CF970 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CEC59FFE17BDC46E001CF970 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -104,16 +126,7 @@
 		CEC5A00E17BDC46E001CF970 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CEC5A01017BDC46E001CF970 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CEC5A01217BDC46E001CF970 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		CEC5A01417BDC46E001CF970 /* NotificationsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
-		CEC5A01517BDC46E001CF970 /* NotificationsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationsViewController.m; sourceTree = "<group>"; };
-		CEC5A01717BDC46E001CF970 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
-		CEC5A01917BDC46E001CF970 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		CEC5A01B17BDC46E001CF970 /* ContactsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
-		CEC5A01C17BDC46E001CF970 /* ContactsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
-		CEC5A01E17BDC46E001CF970 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
-		CEC5A02017BDC46E001CF970 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		CEC5A02317BDC46E001CF970 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NotificationsViewController_iPhone.xib; sourceTree = "<group>"; };
-		CEC5A02917BDC46F001CF970 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ContactsViewController_iPhone.xib; sourceTree = "<group>"; };
 		CED8018C17C76648006FA79E /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		CED8018D17C76648006FA79E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		CED8018E17C76648006FA79E /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
@@ -197,8 +210,6 @@
 		CED8021417CAFFD7006FA79E /* NotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationCell.h; path = view/notifications/NotificationCell.h; sourceTree = "<group>"; };
 		CED8021517CAFFD7006FA79E /* NotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotificationCell.m; path = view/notifications/NotificationCell.m; sourceTree = "<group>"; };
 		CED8021717CB0006006FA79E /* NotificationCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationCell_iPhone.xib; path = view/notifications/NotificationCell_iPhone.xib; sourceTree = "<group>"; };
-		CED8021917CB5D12006FA79E /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
-		CED8021A17CB5D12006FA79E /* Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Util.m; sourceTree = "<group>"; };
 		CED8021F17CB9430006FA79E /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
 		CED8022017CB9430006FA79E /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
 		CED8022217CB9430006FA79E /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
@@ -239,8 +250,8 @@
 		CE7ACCE317C5F05800A12DC4 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				CEC5A01417BDC46E001CF970 /* NotificationsViewController.h */,
-				CEC5A01517BDC46E001CF970 /* NotificationsViewController.m */,
+				CE95B20017D6286A0024008E /* NotificationsViewController.h */,
+				CE95B20117D6286A0024008E /* NotificationsViewController.m */,
 				CEC5A02217BDC46E001CF970 /* NotificationsViewController_iPhone.xib */,
 				CED8021417CAFFD7006FA79E /* NotificationCell.h */,
 				CED8021517CAFFD7006FA79E /* NotificationCell.m */,
@@ -255,10 +266,10 @@
 		CE7ACCE417C5F06A00A12DC4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CEC5A01717BDC46E001CF970 /* first.png */,
-				CEC5A01917BDC46E001CF970 /* first@2x.png */,
-				CEC5A01E17BDC46E001CF970 /* second.png */,
-				CEC5A02017BDC46E001CF970 /* second@2x.png */,
+				CE95B20317D6287D0024008E /* second.png */,
+				CE95B20417D6287D0024008E /* second@2x.png */,
+				CE95B20517D6287D0024008E /* first.png */,
+				CE95B20617D6287D0024008E /* first@2x.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -277,6 +288,8 @@
 		CE7ACCE617C5F2CB00A12DC4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CE95B1EB17D627B60024008E /* Util.h */,
+				CE95B1EC17D627B60024008E /* Util.m */,
 				CED8019717C88C1A006FA79E /* Domain.h */,
 				CED8019817C88C1A006FA79E /* Domain.m */,
 				CED8019A17C88C31006FA79E /* Notification.h */,
@@ -289,8 +302,10 @@
 				CED801A517C8ECE2006FA79E /* User.m */,
 				CED801A717C8F012006FA79E /* UserService.h */,
 				CED801A817C8F012006FA79E /* UserService.m */,
-				CED8021917CB5D12006FA79E /* Util.h */,
-				CED8021A17CB5D12006FA79E /* Util.m */,
+				CE95B1E217D61E040024008E /* Contact.h */,
+				CE95B1E317D61E040024008E /* Contact.m */,
+				CE95B1E517D6224A0024008E /* ContactService.h */,
+				CE95B1E617D6224A0024008E /* ContactService.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -298,9 +313,12 @@
 		CE7ACCE717C5F30800A12DC4 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				CEC5A01B17BDC46E001CF970 /* ContactsViewController.h */,
-				CEC5A01C17BDC46E001CF970 /* ContactsViewController.m */,
-				CEC5A02817BDC46F001CF970 /* ContactsViewController_iPhone.xib */,
+				CE95B1F817D628540024008E /* ContactCell.h */,
+				CE95B1F917D628540024008E /* ContactCell.m */,
+				CE95B1FC17D628540024008E /* ContactCell_iPhone.xib */,
+				CE95B1FA17D628540024008E /* ContactsViewController.h */,
+				CE95B1FB17D628540024008E /* ContactsViewController.m */,
+				CE95B20B17D62E0F0024008E /* ContactsViewController_iPhone.xib */,
 			);
 			name = Contacts;
 			sourceTree = "<group>";
@@ -308,9 +326,9 @@
 		CE7ACCE917C5F47200A12DC4 /* Me */ = {
 			isa = PBXGroup;
 			children = (
-				CE7ACCEA17C5F4A500A12DC4 /* MeViewController.h */,
-				CE7ACCEB17C5F4A500A12DC4 /* MeViewController.m */,
-				CE7ACCEC17C5F4A500A12DC4 /* MeViewController_iPhone.xib */,
+				CE95B1F317D627E40024008E /* MeViewController.h */,
+				CE95B1F417D627E40024008E /* MeViewController.m */,
+				CE95B1F517D627E40024008E /* MeViewController_iPhone.xib */,
 			);
 			name = Me;
 			sourceTree = "<group>";
@@ -318,9 +336,9 @@
 		CE7ACCEF17C5F62200A12DC4 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				CE7ACCF017C5F63400A12DC4 /* LoginViewController.h */,
-				CE7ACCF117C5F63400A12DC4 /* LoginViewController.m */,
-				CE7ACCF217C5F63400A12DC4 /* LoginViewController_iPhone.xib */,
+				CE95B1EE17D627D30024008E /* LoginViewController.h */,
+				CE95B1EF17D627D30024008E /* LoginViewController.m */,
+				CE95B1F017D627D30024008E /* LoginViewController_iPhone.xib */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -651,14 +669,7 @@
 				CEC5A00F17BDC46E001CF970 /* Default.png in Resources */,
 				CEC5A01117BDC46E001CF970 /* Default@2x.png in Resources */,
 				CEC5A01317BDC46E001CF970 /* Default-568h@2x.png in Resources */,
-				CEC5A01817BDC46E001CF970 /* first.png in Resources */,
-				CEC5A01A17BDC46E001CF970 /* first@2x.png in Resources */,
-				CEC5A01F17BDC46E001CF970 /* second.png in Resources */,
-				CEC5A02117BDC46E001CF970 /* second@2x.png in Resources */,
 				CEC5A02417BDC46E001CF970 /* NotificationsViewController_iPhone.xib in Resources */,
-				CEC5A02A17BDC46F001CF970 /* ContactsViewController_iPhone.xib in Resources */,
-				CE7ACCEE17C5F4A500A12DC4 /* MeViewController_iPhone.xib in Resources */,
-				CE7ACCF417C5F63400A12DC4 /* LoginViewController_iPhone.xib in Resources */,
 				CED8019317C76648006FA79E /* README.md in Resources */,
 				CED8019417C76648006FA79E /* release_notes.md in Resources */,
 				CED8021817CB0007006FA79E /* NotificationCell_iPhone.xib in Resources */,
@@ -671,6 +682,14 @@
 				CED8023117CB9430006FA79E /* whiteArrow.png in Resources */,
 				CED8023217CB9430006FA79E /* whiteArrow@2x.png in Resources */,
 				CED8024317CC525F006FA79E /* NotificationDetailViewController_iPhone.xib in Resources */,
+				CE95B1F217D627D30024008E /* LoginViewController_iPhone.xib in Resources */,
+				CE95B1F717D627E40024008E /* MeViewController_iPhone.xib in Resources */,
+				CE95B1FF17D628540024008E /* ContactCell_iPhone.xib in Resources */,
+				CE95B20717D6287D0024008E /* second.png in Resources */,
+				CE95B20817D6287D0024008E /* second@2x.png in Resources */,
+				CE95B20917D6287D0024008E /* first.png in Resources */,
+				CE95B20A17D6287D0024008E /* first@2x.png in Resources */,
+				CE95B20D17D62E0F0024008E /* ContactsViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,10 +702,6 @@
 			files = (
 				CEC5A00917BDC46E001CF970 /* main.m in Sources */,
 				CEC5A00D17BDC46E001CF970 /* AppDelegate.m in Sources */,
-				CEC5A01617BDC46E001CF970 /* NotificationsViewController.m in Sources */,
-				CEC5A01D17BDC46E001CF970 /* ContactsViewController.m in Sources */,
-				CE7ACCED17C5F4A500A12DC4 /* MeViewController.m in Sources */,
-				CE7ACCF317C5F63400A12DC4 /* LoginViewController.m in Sources */,
 				CED8019917C88C1A006FA79E /* Domain.m in Sources */,
 				CED8019C17C88C31006FA79E /* Notification.m in Sources */,
 				CED801A017C8969B006FA79E /* NotificationAddition.m in Sources */,
@@ -719,16 +734,31 @@
 				CED8020C17C8FAD8006FA79E /* MBSpinningCircle.m in Sources */,
 				CED8020D17C8FAD8006FA79E /* MBAlertAbstract.m in Sources */,
 				CED8021617CAFFD7006FA79E /* NotificationCell.m in Sources */,
-				CED8021B17CB5D14006FA79E /* Util.m in Sources */,
 				CED8022A17CB9430006FA79E /* EGORefreshTableHeaderView.m in Sources */,
 				CED8023617CB95F0006FA79E /* MBProgressHUD.m in Sources */,
 				CED8024017CC3EBC006FA79E /* NotificationDetailViewController.m in Sources */,
+				CE95B1E417D61E040024008E /* Contact.m in Sources */,
+				CE95B1E717D6224A0024008E /* ContactService.m in Sources */,
+				CE95B1ED17D627B60024008E /* Util.m in Sources */,
+				CE95B1F117D627D30024008E /* LoginViewController.m in Sources */,
+				CE95B1F617D627E40024008E /* MeViewController.m in Sources */,
+				CE95B1FD17D628540024008E /* ContactCell.m in Sources */,
+				CE95B1FE17D628540024008E /* ContactsViewController.m in Sources */,
+				CE95B20217D6286A0024008E /* NotificationsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		CE95B20B17D62E0F0024008E /* ContactsViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE95B20C17D62E0F0024008E /* en */,
+			);
+			name = ContactsViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
 		CEC5A00517BDC46E001CF970 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -743,14 +773,6 @@
 				CEC5A02317BDC46E001CF970 /* en */,
 			);
 			name = NotificationsViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		CEC5A02817BDC46F001CF970 /* ContactsViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CEC5A02917BDC46F001CF970 /* en */,
-			);
-			name = ContactsViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

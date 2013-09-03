@@ -125,3 +125,25 @@ function api_get_classes() {
 function api_get_student() {
 	exit;
 }
+
+function api_get_contacts() {
+	$ret = array();
+	$ret[] = array(
+		"school_id" => "1",
+		"grade_id" => "2",
+		"class_id" => "3",
+		"student_id" => "4",
+		"teacher_id" => "5",
+		"name" => "姓名1"
+	);
+	$ret[] = array(
+		"school_id" => "1",
+		"grade_id" => "2",
+		"class_id" => "3",
+		"student_id" => "5",
+		"teacher_id" => "5",
+		"name" => "姓名2"
+	);
+
+	echo json_encode($ret);
+}

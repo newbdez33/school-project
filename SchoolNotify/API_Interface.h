@@ -17,6 +17,7 @@
 #define API_COMMAND_NOTIFICATION_LIST @"notice.php?mod=list"
 #define API_COMMAND_NOTIFICATION_CONTENT @"notice.php?mod=view"
 #define API_COMMAND_NOTIFICATION_REPLY @"notice.php?mod=reply"
+#define API_COMMAND_CONTACT_LIST @"notice.php?mod=get_contacts"
 
 //KEYs
 #define API_KEY_SUCCESS @"success"
@@ -25,6 +26,12 @@
 #define API_KEY_USER_ID @"userid"
 #define API_KEY_USER_ROLE @"rold_id"
 #define API_KEY_USER_SCHOOL_ID @"school_id"
+
+#define API_KEY_CONTACT_GRADE_ID @"grade_id"
+#define API_KEY_CONTACT_CLASS_ID @"class_id"
+#define API_KEY_CONTACT_STUDENT_ID @"student_id"
+#define API_KEY_CONTACT_TEACHER_ID @"teacher_id"
+#define API_KEY_CONTACT_NAME @"name"
 
 #define API_KEY_NOTIFICATION_MESSAGE_ID @"messageid"
 #define API_KEY_NOTIFICATION_CONTENT @"content"
