@@ -126,23 +126,50 @@ function api_get_student() {
 	exit;
 }
 
+/*
+{
+class:[{"class_id" : "xxxx","class_name" : "xxxx"},{"class_id" : "xxxx","class_name" : "xxxx"}]
+teacher:[{"teacher_id" : "xxxx","teacher_name" : "xxxx","phone" : "xxx","class_name":"xxx"},{"teacher_id" : "xxxx","teacher_name" : "xxxx","phone" : "xxx",class_name:"xxx"}]
+student:[{"student_id" : "xxxx","student_name" : "xxxx","phone" : "xxx","class_name":"xxx"},{"student_id" : "xxxx","student_name" : "xxxx","phone" : "xxx",""class_name":"xxx"}]
+}
+*/
 function api_get_contacts() {
 	$ret = array();
-	$ret[] = array(
-		"school_id" => "1",
-		"grade_id" => "2",
+	$ret['class'][] = array(
 		"class_id" => "3",
-		"student_id" => "4",
-		"teacher_id" => "5",
-		"name" => "姓名1"
+		"class_name" => "班级1"
 	);
-	$ret[] = array(
-		"school_id" => "1",
-		"grade_id" => "2",
-		"class_id" => "3",
-		"student_id" => "5",
+	$ret['class'][] = array(
+		"class_id" => "4",
+		"class_name" => "班级2"
+	);
+
+	$ret['teacher'][] = array(
 		"teacher_id" => "5",
-		"name" => "姓名2"
+		"teacher_name" => "老师5",
+		"phone" => "130000000",
+		"class_name" => "班级1"
+	);
+
+	$ret['teacher'][] = array(
+		"teacher_id" => "6",
+		"teacher_name" => "老师6",
+		"phone" => "130000001",
+		"class_name" => "班级2"
+	);
+
+	$ret['student'][] = array(
+		"student_id" => "3",
+		"student_name" => "学生3",
+		"phone" => "130000003",
+		"class_name" => "班级2"
+	);
+
+	$ret['student'][] = array(
+		"student_id" => "4",
+		"student_name" => "学生4",
+		"phone" => "130000004",
+		"class_name" => "班级2"
 	);
 
 	echo json_encode($ret);

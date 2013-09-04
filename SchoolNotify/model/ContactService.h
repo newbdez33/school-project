@@ -10,6 +10,6 @@
 
 @interface ContactService : NSObject
 
-+ (NSArray *)fetchContacts;
++ (NSDictionary *)fetchContacts;
 
 @end

@@ -19,6 +19,9 @@
     NSDate *lastUpdate;
 }
 
-@property (nonatomic, strong) NSMutableArray *contactList;
+@property (nonatomic, strong) NSMutableDictionary *contactList;
+@property (nonatomic, strong) NSMutableDictionary *sortedContactData;
+
+- (void)sortContactListData;
 
 @end

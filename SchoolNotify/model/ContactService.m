@@ -12,7 +12,7 @@
 
 @implementation ContactService
 
-+ (NSArray *)fetchContacts {
++ (NSDictionary *)fetchContacts {
     
     AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
@@ -24,7 +24,7 @@
     NSError *request_error = [request error];
     if (!request_error) {
         NSString *response = [request responseString];
-        NSArray *data = [response arrayFromJson];
+        NSDictionary *data = [response dictionaryFromJson];
         if (data) {
             return data;
         }else {

@@ -19,6 +19,9 @@
 //班级id
 @property (nonatomic, strong) NSString *class_id;
 
+//班级
+@property (nonatomic, strong) NSString *class_name;
+
 //学生id
 @property (nonatomic, strong) NSString *student_id;
 
@@ -27,6 +30,9 @@
 
 //姓名
 @property (nonatomic, strong) NSString *name;
+
+//tel
+@property (nonatomic, strong) NSString *tel;
 
 
 @end

@@ -10,6 +10,9 @@
 #import "MBProgressHUD.h"
 #import "ContactService.h"
 #import "Contact.h"
+#import "ClassContact.h"
+#import "TeacherContact.h"
+#import "StudentContact.h"
 #import "ContactCell.h"
 #import "AppDelegate.h"
 
@@ -39,13 +42,14 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         
-        NSArray *contacts = [ContactService fetchContacts];
+        NSDictionary *contacts = [ContactService fetchContacts];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
             if (contacts!=nil && contacts.count>0) {
-                self.contactList = [NSMutableArray arrayWithArray:contacts];
+                self.contactList = [NSMutableDictionary dictionaryWithDictionary:contacts];
             }
+            [self sortContactListData];
             
             [contactTableView reloadData];
             
@@ -84,8 +88,23 @@
 }
 
 #pragma mark - UITableView Related
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    NSArray *keys = [self.sortedContactData allKeys];
+    NSString *title = [NSString stringWithFormat:@"%@", [keys objectAtIndex:section]];
+    return NSLocalizedString(title, @"section header title");
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    NSArray *keys = [self.sortedContactData allKeys];
+    return keys.count;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.contactList.count;
+    NSArray *keys = [self.sortedContactData allKeys];
+    NSString *title = [NSString stringWithFormat:@"%@", [keys objectAtIndex:section]];
+    NSArray *list = [self.sortedContactData objectForKey:title];
+    
+    return list.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -99,9 +118,13 @@
     
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     
-    Contact *contact = [[Contact alloc] initWithData:[self.contactList objectAtIndex:indexPath.row]];
+    NSArray *keys = [self.sortedContactData allKeys];
+    NSString *title = [NSString stringWithFormat:@"%@", [keys objectAtIndex:indexPath.section]];
+    NSArray *list = [self.sortedContactData objectForKey:title];
+    
+    Contact *contact = [list objectAtIndex:indexPath.row];
     cell.nameLabel.text = contact.name;
-    cell.telLabel.text = @"";
+    cell.telLabel.text = contact.tel;
     
     return cell;
 }
@@ -116,6 +139,45 @@
     
     //
     
+    
+}
+
+- (void)sortContactListData {
+    
+    self.sortedContactData = [NSMutableDictionary dictionaryWithDictionary:@{@"班级": [NSMutableArray array]}];
+    
+    //1. 班级 Section
+    //TODO 直接写key了，api不稳定，等重构吧。
+    NSMutableArray *classList = [self.contactList objectForKey:@"class"];
+    NSMutableArray *classArray = [self.sortedContactData objectForKey:@"班级"];
+    [classList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        ClassContact *c = [[ClassContact alloc] initWithData:obj];
+        [classArray addObject:c];
+    }];
+    
+    //2. 老师
+    NSMutableArray *teacherList = [self.contactList objectForKey:@"teacher"];
+    [teacherList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        TeacherContact *c = [[TeacherContact alloc] initWithData:obj];
+        NSString *class_name = c.class_name;
+        if ([self.sortedContactData objectForKey:class_name] == nil) {
+            [self.sortedContactData setObject:[NSMutableArray array] forKey:class_name];
+        }
+        NSMutableArray *teacherArray = [self.sortedContactData objectForKey:class_name];
+        [teacherArray addObject:c];
+    }];
+    
+    //3. 学生
+    NSMutableArray *studentList = [self.contactList objectForKey:@"student"];
+    [studentList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        StudentContact *c = [[StudentContact alloc] initWithData:obj];
+        NSString *class_name = c.class_name;
+        if ([self.sortedContactData objectForKey:class_name] == nil) {
+            [self.sortedContactData setObject:[NSMutableArray array] forKey:class_name];
+        }
+        NSMutableArray *studentArray = [self.sortedContactData objectForKey:class_name];
+        [studentArray addObject:c];
+    }];
     
 }
 

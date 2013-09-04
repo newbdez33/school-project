@@ -34,4 +34,13 @@
     return NIL_STR([originData objectForKey:API_KEY_CONTACT_NAME]);
 }
 
+- (NSString *)tel {
+    return NIL_STR([originData objectForKey:@"phone"]);
+}
+
+
+- (NSString *)class_name {
+    return NIL_STR([originData objectForKey:@"class_name"]);
+}
+
 @end

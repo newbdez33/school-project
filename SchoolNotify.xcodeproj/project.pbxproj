@@ -22,7 +22,12 @@
 		CE95B20817D6287D0024008E /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE95B20417D6287D0024008E /* second@2x.png */; };
 		CE95B20917D6287D0024008E /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = CE95B20517D6287D0024008E /* first.png */; };
 		CE95B20A17D6287D0024008E /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE95B20617D6287D0024008E /* first@2x.png */; };
-		CE95B20D17D62E0F0024008E /* ContactsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95B20B17D62E0F0024008E /* ContactsViewController_iPhone.xib */; };
+		CE95B21717D6DF770024008E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE95B21917D6DF770024008E /* Localizable.strings */; };
+		CE95B22017D6E3D10024008E /* ContactsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95B21F17D6E3D10024008E /* ContactsViewController_iPhone.xib */; };
+		CE95B22217D6E3F70024008E /* NotificationsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE95B22117D6E3F60024008E /* NotificationsViewController_iPhone.xib */; };
+		CE95B22517D6E9DE0024008E /* ClassContact.m in Sources */ = {isa = PBXBuildFile; fileRef = CE95B22417D6E9DE0024008E /* ClassContact.m */; };
+		CE95B22817D704DD0024008E /* TeacherContact.m in Sources */ = {isa = PBXBuildFile; fileRef = CE95B22717D704DD0024008E /* TeacherContact.m */; };
+		CE95B22B17D70BCB0024008E /* StudentContact.m in Sources */ = {isa = PBXBuildFile; fileRef = CE95B22A17D70BCB0024008E /* StudentContact.m */; };
 		CEC59FFD17BDC46E001CF970 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC59FFC17BDC46E001CF970 /* UIKit.framework */; };
 		CEC59FFF17BDC46E001CF970 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC59FFE17BDC46E001CF970 /* Foundation.framework */; };
 		CEC5A00117BDC46E001CF970 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC5A00017BDC46E001CF970 /* CoreGraphics.framework */; };
@@ -32,7 +37,6 @@
 		CEC5A00F17BDC46E001CF970 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A00E17BDC46E001CF970 /* Default.png */; };
 		CEC5A01117BDC46E001CF970 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A01017BDC46E001CF970 /* Default@2x.png */; };
 		CEC5A01317BDC46E001CF970 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A01217BDC46E001CF970 /* Default-568h@2x.png */; };
-		CEC5A02417BDC46E001CF970 /* NotificationsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC5A02217BDC46E001CF970 /* NotificationsViewController_iPhone.xib */; };
 		CED8019217C76648006FA79E /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CED8018C17C76648006FA79E /* libTestFlight.a */; };
 		CED8019317C76648006FA79E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CED8018D17C76648006FA79E /* README.md */; };
 		CED8019417C76648006FA79E /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = CED8018E17C76648006FA79E /* release_notes.md */; };
@@ -112,7 +116,17 @@
 		CE95B20417D6287D0024008E /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "second@2x.png"; path = "resources/second@2x.png"; sourceTree = "<group>"; };
 		CE95B20517D6287D0024008E /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = resources/first.png; sourceTree = "<group>"; };
 		CE95B20617D6287D0024008E /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "first@2x.png"; path = "resources/first@2x.png"; sourceTree = "<group>"; };
-		CE95B20C17D62E0F0024008E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ContactsViewController_iPhone.xib; sourceTree = "<group>"; };
+		CE95B21217D6DD3F0024008E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		CE95B21817D6DF770024008E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		CE95B21A17D6DF7B0024008E /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE95B21F17D6E3D10024008E /* ContactsViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactsViewController_iPhone.xib; path = view/contacts/ContactsViewController_iPhone.xib; sourceTree = "<group>"; };
+		CE95B22117D6E3F60024008E /* NotificationsViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationsViewController_iPhone.xib; path = view/notifications/NotificationsViewController_iPhone.xib; sourceTree = "<group>"; };
+		CE95B22317D6E9DE0024008E /* ClassContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassContact.h; path = model/ClassContact.h; sourceTree = "<group>"; };
+		CE95B22417D6E9DE0024008E /* ClassContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ClassContact.m; path = model/ClassContact.m; sourceTree = "<group>"; };
+		CE95B22617D704DD0024008E /* TeacherContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TeacherContact.h; path = model/TeacherContact.h; sourceTree = "<group>"; };
+		CE95B22717D704DD0024008E /* TeacherContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TeacherContact.m; path = model/TeacherContact.m; sourceTree = "<group>"; };
+		CE95B22917D70BCA0024008E /* StudentContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StudentContact.h; path = model/StudentContact.h; sourceTree = "<group>"; };
+		CE95B22A17D70BCB0024008E /* StudentContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StudentContact.m; path = model/StudentContact.m; sourceTree = "<group>"; };
 		CEC59FF917BDC46E001CF970 /* SchoolNotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolNotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC59FFC17BDC46E001CF970 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CEC59FFE17BDC46E001CF970 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -126,7 +140,6 @@
 		CEC5A00E17BDC46E001CF970 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CEC5A01017BDC46E001CF970 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CEC5A01217BDC46E001CF970 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		CEC5A02317BDC46E001CF970 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/NotificationsViewController_iPhone.xib; sourceTree = "<group>"; };
 		CED8018C17C76648006FA79E /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		CED8018D17C76648006FA79E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		CED8018E17C76648006FA79E /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
@@ -250,9 +263,9 @@
 		CE7ACCE317C5F05800A12DC4 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				CE95B22117D6E3F60024008E /* NotificationsViewController_iPhone.xib */,
 				CE95B20017D6286A0024008E /* NotificationsViewController.h */,
 				CE95B20117D6286A0024008E /* NotificationsViewController.m */,
-				CEC5A02217BDC46E001CF970 /* NotificationsViewController_iPhone.xib */,
 				CED8021417CAFFD7006FA79E /* NotificationCell.h */,
 				CED8021517CAFFD7006FA79E /* NotificationCell.m */,
 				CED8021717CB0006006FA79E /* NotificationCell_iPhone.xib */,
@@ -306,6 +319,12 @@
 				CE95B1E317D61E040024008E /* Contact.m */,
 				CE95B1E517D6224A0024008E /* ContactService.h */,
 				CE95B1E617D6224A0024008E /* ContactService.m */,
+				CE95B22317D6E9DE0024008E /* ClassContact.h */,
+				CE95B22417D6E9DE0024008E /* ClassContact.m */,
+				CE95B22617D704DD0024008E /* TeacherContact.h */,
+				CE95B22717D704DD0024008E /* TeacherContact.m */,
+				CE95B22917D70BCA0024008E /* StudentContact.h */,
+				CE95B22A17D70BCB0024008E /* StudentContact.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -313,12 +332,12 @@
 		CE7ACCE717C5F30800A12DC4 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				CE95B21F17D6E3D10024008E /* ContactsViewController_iPhone.xib */,
 				CE95B1F817D628540024008E /* ContactCell.h */,
 				CE95B1F917D628540024008E /* ContactCell.m */,
 				CE95B1FC17D628540024008E /* ContactCell_iPhone.xib */,
 				CE95B1FA17D628540024008E /* ContactsViewController.h */,
 				CE95B1FB17D628540024008E /* ContactsViewController.m */,
-				CE95B20B17D62E0F0024008E /* ContactsViewController_iPhone.xib */,
 			);
 			name = Contacts;
 			sourceTree = "<group>";
@@ -401,6 +420,7 @@
 				CEC5A01217BDC46E001CF970 /* Default-568h@2x.png */,
 				CED8019D17C88DB2006FA79E /* API_Interface.h */,
 				CED8021017CAFD53006FA79E /* Constants.h */,
+				CE95B21917D6DF770024008E /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -649,6 +669,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
+				Base,
 			);
 			mainGroup = CEC59FF017BDC46E001CF970;
 			productRefGroup = CEC59FFA17BDC46E001CF970 /* Products */;
@@ -669,7 +691,6 @@
 				CEC5A00F17BDC46E001CF970 /* Default.png in Resources */,
 				CEC5A01117BDC46E001CF970 /* Default@2x.png in Resources */,
 				CEC5A01317BDC46E001CF970 /* Default-568h@2x.png in Resources */,
-				CEC5A02417BDC46E001CF970 /* NotificationsViewController_iPhone.xib in Resources */,
 				CED8019317C76648006FA79E /* README.md in Resources */,
 				CED8019417C76648006FA79E /* release_notes.md in Resources */,
 				CED8021817CB0007006FA79E /* NotificationCell_iPhone.xib in Resources */,
@@ -689,7 +710,9 @@
 				CE95B20817D6287D0024008E /* second@2x.png in Resources */,
 				CE95B20917D6287D0024008E /* first.png in Resources */,
 				CE95B20A17D6287D0024008E /* first@2x.png in Resources */,
-				CE95B20D17D62E0F0024008E /* ContactsViewController_iPhone.xib in Resources */,
+				CE95B21717D6DF770024008E /* Localizable.strings in Resources */,
+				CE95B22017D6E3D10024008E /* ContactsViewController_iPhone.xib in Resources */,
+				CE95B22217D6E3F70024008E /* NotificationsViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,34 +768,31 @@
 				CE95B1FD17D628540024008E /* ContactCell.m in Sources */,
 				CE95B1FE17D628540024008E /* ContactsViewController.m in Sources */,
 				CE95B20217D6286A0024008E /* NotificationsViewController.m in Sources */,
+				CE95B22517D6E9DE0024008E /* ClassContact.m in Sources */,
+				CE95B22817D704DD0024008E /* TeacherContact.m in Sources */,
+				CE95B22B17D70BCB0024008E /* StudentContact.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CE95B20B17D62E0F0024008E /* ContactsViewController_iPhone.xib */ = {
+		CE95B21917D6DF770024008E /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CE95B20C17D62E0F0024008E /* en */,
+				CE95B21817D6DF770024008E /* zh-Hans */,
+				CE95B21A17D6DF7B0024008E /* en */,
 			);
-			name = ContactsViewController_iPhone.xib;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		CEC5A00517BDC46E001CF970 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CEC5A00617BDC46E001CF970 /* en */,
+				CE95B21217D6DD3F0024008E /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		CEC5A02217BDC46E001CF970 /* NotificationsViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CEC5A02317BDC46E001CF970 /* en */,
-			);
-			name = NotificationsViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
