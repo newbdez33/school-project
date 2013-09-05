@@ -7,6 +7,9 @@
 //
 
 #import "Contact.h"
+#import "ClassContact.h"
+#import "TeacherContact.h"
+#import "StudentContact.h"
 
 @implementation Contact
 
@@ -41,6 +44,10 @@
 
 - (NSString *)class_name {
     return NIL_STR([originData objectForKey:@"class_name"]);
+}
+
++ (Contact *)guessWithData:(NSDictionary *)data {
+    return nil;
 }
 
 @end

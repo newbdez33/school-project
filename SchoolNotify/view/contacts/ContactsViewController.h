@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "EGORefreshTableHeaderView.h"
 
-@interface ContactsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, EGORefreshTableHeaderDelegate, UIScrollViewDelegate> {
+@interface ContactsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, EGORefreshTableHeaderDelegate, UIScrollViewDelegate, UISearchBarDelegate> {
     
     IBOutlet UITableView *contactTableView;
     
@@ -17,11 +17,16 @@
     EGORefreshTableHeaderView *_refreshHeaderView;
 	BOOL _reloading;
     NSDate *lastUpdate;
+    
+    //搜索
+    IBOutlet UISearchBar *_searchBar;
+    BOOL isFiltered;
 }
 
 @property (nonatomic, strong) NSMutableDictionary *contactList;
 @property (nonatomic, strong) NSMutableDictionary *sortedContactData;
+@property (nonatomic, strong) NSMutableDictionary *filteredSortedContactData;
 
-- (void)sortContactListData;
+- (void)sortContactListDataWithFilter:(NSString *)name;
 
 @end

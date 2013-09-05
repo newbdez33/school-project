@@ -28,6 +28,7 @@
     if (self) {
         self.title = NSLocalizedString(@"通讯录", @"联系人");
         self.tabBarItem.image = [UIImage imageNamed:@"second"];
+        isFiltered = NO;
     }
     return self;
 }
@@ -49,7 +50,7 @@
             if (contacts!=nil && contacts.count>0) {
                 self.contactList = [NSMutableDictionary dictionaryWithDictionary:contacts];
             }
-            [self sortContactListData];
+            [self sortContactListDataWithFilter:nil];
             
             [contactTableView reloadData];
             
@@ -79,6 +80,8 @@
 		_refreshHeaderView = view;
 		
 	}
+    
+    [self configSearchBar];
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,20 +92,39 @@
 
 #pragma mark - UITableView Related
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    NSArray *keys = [self.sortedContactData allKeys];
+    NSArray *keys = nil;
+    if (isFiltered) {
+        keys = [self.filteredSortedContactData allKeys];
+    }else {
+        keys = [self.sortedContactData allKeys];
+    }
     NSString *title = [NSString stringWithFormat:@"%@", [keys objectAtIndex:section]];
     return NSLocalizedString(title, @"section header title");
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSArray *keys = [self.sortedContactData allKeys];
+    NSArray *keys = nil;
+    if (isFiltered) {
+        keys = [self.filteredSortedContactData allKeys];
+    }else {
+        keys = [self.sortedContactData allKeys];
+    }
     return keys.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSArray *keys = [self.sortedContactData allKeys];
+    NSArray *keys = nil;
+    NSDictionary *tableData = nil;
+    if (isFiltered) {
+        keys = [self.filteredSortedContactData allKeys];
+        tableData = self.filteredSortedContactData;
+    }else {
+        keys = [self.sortedContactData allKeys];
+        tableData = self.sortedContactData;
+    }
+
     NSString *title = [NSString stringWithFormat:@"%@", [keys objectAtIndex:section]];
-    NSArray *list = [self.sortedContactData objectForKey:title];
+    NSArray *list = [tableData objectForKey:title];
     
     return list.count;
 }
@@ -118,9 +140,17 @@
     
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     
-    NSArray *keys = [self.sortedContactData allKeys];
+    NSArray *keys = nil;
+    NSDictionary *tableData = nil;
+    if (isFiltered) {
+        keys = [self.filteredSortedContactData allKeys];
+        tableData = self.filteredSortedContactData;
+    }else {
+        keys = [self.sortedContactData allKeys];
+        tableData = self.sortedContactData;
+    }
     NSString *title = [NSString stringWithFormat:@"%@", [keys objectAtIndex:indexPath.section]];
-    NSArray *list = [self.sortedContactData objectForKey:title];
+    NSArray *list = [tableData objectForKey:title];
     
     Contact *contact = [list objectAtIndex:indexPath.row];
     cell.nameLabel.text = contact.name;
@@ -142,42 +172,70 @@
     
 }
 
-- (void)sortContactListData {
+- (void)sortContactListDataWithFilter:(NSString *)name {
     
-    self.sortedContactData = [NSMutableDictionary dictionaryWithDictionary:@{@"班级": [NSMutableArray array]}];
+    NSMutableDictionary *workingData = [NSMutableDictionary dictionaryWithDictionary:@{@"班级": [NSMutableArray array]}];
+    NSPredicate *namePredicate = nil;
+    if (name!=nil) {
+        namePredicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
+            Contact *obj = evaluatedObject;
+            NSPredicate *match = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@", name];
+            if ([match evaluateWithObject:obj.name]) {
+                return YES;
+            }
+            return NO;
+        }];
+    }
     
     //1. 班级 Section
     //TODO 直接写key了，api不稳定，等重构吧。
-    NSMutableArray *classList = [self.contactList objectForKey:@"class"];
-    NSMutableArray *classArray = [self.sortedContactData objectForKey:@"班级"];
+    NSArray *classList = [self.contactList objectForKey:@"class"];
+    NSMutableArray *classArray = [workingData objectForKey:@"班级"];
     [classList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         ClassContact *c = [[ClassContact alloc] initWithData:obj];
         [classArray addObject:c];
     }];
+    if (namePredicate) {
+        [classArray filterUsingPredicate:namePredicate];
+    }
     
     //2. 老师
     NSMutableArray *teacherList = [self.contactList objectForKey:@"teacher"];
     [teacherList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         TeacherContact *c = [[TeacherContact alloc] initWithData:obj];
         NSString *class_name = c.class_name;
-        if ([self.sortedContactData objectForKey:class_name] == nil) {
-            [self.sortedContactData setObject:[NSMutableArray array] forKey:class_name];
+        if ([workingData objectForKey:class_name] == nil) {
+            [workingData setObject:[NSMutableArray array] forKey:class_name];
         }
-        NSMutableArray *teacherArray = [self.sortedContactData objectForKey:class_name];
+        NSMutableArray *teacherArray = [workingData objectForKey:class_name];
         [teacherArray addObject:c];
+        if (namePredicate) {
+            [teacherArray filterUsingPredicate:namePredicate];
+        }
     }];
+
     
     //3. 学生
     NSMutableArray *studentList = [self.contactList objectForKey:@"student"];
     [studentList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         StudentContact *c = [[StudentContact alloc] initWithData:obj];
         NSString *class_name = c.class_name;
-        if ([self.sortedContactData objectForKey:class_name] == nil) {
-            [self.sortedContactData setObject:[NSMutableArray array] forKey:class_name];
+        if ([workingData objectForKey:class_name] == nil) {
+            [workingData setObject:[NSMutableArray array] forKey:class_name];
         }
-        NSMutableArray *studentArray = [self.sortedContactData objectForKey:class_name];
+        NSMutableArray *studentArray = [workingData objectForKey:class_name];
         [studentArray addObject:c];
+        if (namePredicate) {
+            [studentArray filterUsingPredicate:namePredicate];
+        }
+
     }];
+    
+    if (name!=nil) {
+        self.filteredSortedContactData = workingData;
+    }else {
+        self.sortedContactData = workingData;
+    }
     
 }
 
@@ -217,6 +275,114 @@
 	
 	return lastUpdate;
 	
+}
+
+#pragma mark - SearchBar
+// 初始化搜索条
+- (void) configSearchBar {
+    
+    _searchBar.delegate = self;
+//    _searchBar.translucent = YES;
+    
+//    for (UIView *subview in _searchBar.subviews)
+//    {
+//        if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")])
+//        {
+//            [subview removeFromSuperview];
+//            break;
+//        }
+//    }
+    _searchBar.showsCancelButton = YES;
+    _searchBar.delegate = self;
+    
+    [_searchBar setShowsCancelButton:NO animated:YES];
+
+    for (UIView *searchBarSubview in [_searchBar subviews]) {
+        
+        if ([searchBarSubview conformsToProtocol:@protocol(UITextInputTraits)]) {
+            
+            @try {
+                
+                [(UITextField *)searchBarSubview setReturnKeyType:UIReturnKeyDone];
+                [(UITextField *)searchBarSubview setKeyboardAppearance:UIKeyboardAppearanceAlert];
+            }
+            @catch (NSException * e) {
+                
+                // ignore exception
+            }
+        }
+    }
+    
+
+    UIButton* _cancelButton = [_searchBar valueForKey:@"_cancelButton"];
+    [_cancelButton setTitle:NSLocalizedString(@"取消", @"cancel") forState:UIControlStateNormal];
+    
+    [self setCancelButtonEnabled];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(actionOnDidKeyboardHide)
+                                                 name:UIKeyboardDidChangeFrameNotification
+                                               object:nil];
+    
+}
+
+- (void) actionOnDidKeyboardHide
+{
+    [self setCancelButtonEnabled];
+}
+
+// 设置取消按钮为不可见
+- (void) setCancelButtonEnabled
+{
+    UIButton* _cancelButton = [_searchBar valueForKey:@"_cancelButton"];
+    [_cancelButton setEnabled:YES];
+    [_cancelButton setBackgroundColor:[UIColor clearColor]];
+    //[_cancelButton setTintColor:[UIColor blackColor]];
+}
+
+// called when text starts editing
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    [searchBar setShowsCancelButton:YES animated:YES];
+    
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if (searchBar.text.length==0) {
+        isFiltered = NO;
+    }else {
+        isFiltered = YES;
+        [self sortContactListDataWithFilter:searchText];
+    }
+    
+    [contactTableView reloadData];
+}
+
+// called when text ends editing
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    [searchBar setShowsCancelButton:NO animated:YES];
+    NSCharacterSet *blank = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    searchBar.text=  [searchBar.text stringByTrimmingCharactersInSet:blank];
+    [searchBar resignFirstResponder];
+}
+
+// called when keyboard search button pressed
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+
+    //开始搜索
+    NSLog(@"开始搜索");
+}
+
+// called when cancel button pressed
+- (void)searchBarCancelButtonClicked:(UISearchBar *) searchBar
+{
+    searchBar.text = @"";
+    
+    //取消cancel
+    [searchBar resignFirstResponder];
 }
 
 @end

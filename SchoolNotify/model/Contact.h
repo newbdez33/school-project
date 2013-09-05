@@ -34,5 +34,6 @@
 //tel
 @property (nonatomic, strong) NSString *tel;
 
++ (Contact *)guessWithData:(NSDictionary *)data;
 
 @end

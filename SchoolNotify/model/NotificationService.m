@@ -60,16 +60,20 @@
 
 //发布消息
 /*
- "参数：
- uid:用户id
- range：发送范围
- 1：全校， 2：全年级，3：全班级，4：个人
- school_id 学校id
- grade_id 年级id
- class_id 班级id
- student_id 学生id
- content:发送内容
- need_reply:是否需要回复"
+ 参数：
+ {
+ userid:用户id
+ tzlx:1.普通2.紧急3,系统
+ hftype:0.不需回复 1.需要回复
+ content:回复内容
+ fbid:[
+ {"classid" : "xxxx"}
+ {"teacherid" : "xxxx"}
+ {"studentid" : "xxxx"}
+ ]
+ 
+ }
+
  */
 + (BOOL)postNotification:(NSInteger)range target_id:(NSInteger)target_id content:(NSString *)content need_reply:(BOOL)need_reply {
     return NO;

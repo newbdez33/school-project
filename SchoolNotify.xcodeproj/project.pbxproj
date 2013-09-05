@@ -117,8 +117,8 @@
 		CE95B20517D6287D0024008E /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = first.png; path = resources/first.png; sourceTree = "<group>"; };
 		CE95B20617D6287D0024008E /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "first@2x.png"; path = "resources/first@2x.png"; sourceTree = "<group>"; };
 		CE95B21217D6DD3F0024008E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		CE95B21817D6DF770024008E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		CE95B21A17D6DF7B0024008E /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		CE95B21817D6DF770024008E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		CE95B21A17D6DF7B0024008E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CE95B21F17D6E3D10024008E /* ContactsViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ContactsViewController_iPhone.xib; path = view/contacts/ContactsViewController_iPhone.xib; sourceTree = "<group>"; };
 		CE95B22117D6E3F60024008E /* NotificationsViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationsViewController_iPhone.xib; path = view/notifications/NotificationsViewController_iPhone.xib; sourceTree = "<group>"; };
 		CE95B22317D6E9DE0024008E /* ClassContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassContact.h; path = model/ClassContact.h; sourceTree = "<group>"; };
@@ -332,12 +332,12 @@
 		CE7ACCE717C5F30800A12DC4 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				CE95B21F17D6E3D10024008E /* ContactsViewController_iPhone.xib */,
 				CE95B1F817D628540024008E /* ContactCell.h */,
 				CE95B1F917D628540024008E /* ContactCell.m */,
 				CE95B1FC17D628540024008E /* ContactCell_iPhone.xib */,
 				CE95B1FA17D628540024008E /* ContactsViewController.h */,
 				CE95B1FB17D628540024008E /* ContactsViewController.m */,
+				CE95B21F17D6E3D10024008E /* ContactsViewController_iPhone.xib */,
 			);
 			name = Contacts;
 			sourceTree = "<group>";
