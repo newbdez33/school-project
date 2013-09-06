@@ -167,9 +167,27 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    //
+    NSArray *keys = nil;
+    NSDictionary *tableData = nil;
+    if (isFiltered) {
+        keys = [self.filteredSortedContactData allKeys];
+        tableData = self.filteredSortedContactData;
+    }else {
+        keys = [self.sortedContactData allKeys];
+        tableData = self.sortedContactData;
+    }
+    NSString *title = [NSString stringWithFormat:@"%@", [keys objectAtIndex:indexPath.section]];
+    NSArray *list = [tableData objectForKey:title];
     
+    Contact *contact = [list objectAtIndex:indexPath.row];
     
+    NSString *tel = contact.tel;
+    
+    //打电话
+    if (tel && ![tel isEqualToString:@""]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", tel]]];
+    }
+
 }
 
 - (void)sortContactListDataWithFilter:(NSString *)name {
