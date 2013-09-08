@@ -9,8 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "EGORefreshTableHeaderView.h"
 
+@protocol ContactsViewControllerPickerDelegate
+
+- (void)doneWithPickingContacts:(NSArray *)contacts;
+
+@end
+
 @interface ContactsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, EGORefreshTableHeaderDelegate, UIScrollViewDelegate, UISearchBarDelegate> {
     
+    BOOL isModePicker;
+    NSMutableArray *pickedContacts;
+    
+    IBOutlet UINavigationBar *_navbar;
     IBOutlet UITableView *contactTableView;
     
     //下拉刷新处理
@@ -26,7 +36,9 @@
 @property (nonatomic, strong) NSMutableDictionary *contactList;
 @property (nonatomic, strong) NSMutableDictionary *sortedContactData;
 @property (nonatomic, strong) NSMutableDictionary *filteredSortedContactData;
+@property (nonatomic, weak) id <ContactsViewControllerPickerDelegate> delegate;
 
 - (void)sortContactListDataWithFilter:(NSString *)name;
+- (void)modeForContactsPicker;
 
 @end

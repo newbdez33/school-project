@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 $ret = array();
 $ret['success'] = true;
 $ret['userid'] = "1";

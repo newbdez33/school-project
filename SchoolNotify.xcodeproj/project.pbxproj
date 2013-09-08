@@ -90,6 +90,8 @@
 		CED8023617CB95F0006FA79E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CED8023517CB95F0006FA79E /* MBProgressHUD.m */; };
 		CED8024017CC3EBC006FA79E /* NotificationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED8023E17CC3EBC006FA79E /* NotificationDetailViewController.m */; };
 		CED8024317CC525F006FA79E /* NotificationDetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED8024217CC525E006FA79E /* NotificationDetailViewController_iPhone.xib */; };
+		CEDD6C9417D9D4C900754645 /* NotificationPublishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDD6C9217D9D4C900754645 /* NotificationPublishViewController.m */; };
+		CEDD6C9517D9D4C900754645 /* NotificationPublishViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEDD6C9317D9D4C900754645 /* NotificationPublishViewController_iPhone.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -238,6 +240,9 @@
 		CED8023D17CC3EBB006FA79E /* NotificationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationDetailViewController.h; path = view/notifications/NotificationDetailViewController.h; sourceTree = "<group>"; };
 		CED8023E17CC3EBC006FA79E /* NotificationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotificationDetailViewController.m; path = view/notifications/NotificationDetailViewController.m; sourceTree = "<group>"; };
 		CED8024217CC525E006FA79E /* NotificationDetailViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationDetailViewController_iPhone.xib; path = view/notifications/NotificationDetailViewController_iPhone.xib; sourceTree = "<group>"; };
+		CEDD6C9117D9D4C900754645 /* NotificationPublishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationPublishViewController.h; path = view/notifications/NotificationPublishViewController.h; sourceTree = "<group>"; };
+		CEDD6C9217D9D4C900754645 /* NotificationPublishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotificationPublishViewController.m; path = view/notifications/NotificationPublishViewController.m; sourceTree = "<group>"; };
+		CEDD6C9317D9D4C900754645 /* NotificationPublishViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotificationPublishViewController_iPhone.xib; path = view/notifications/NotificationPublishViewController_iPhone.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +277,9 @@
 				CED8023D17CC3EBB006FA79E /* NotificationDetailViewController.h */,
 				CED8023E17CC3EBC006FA79E /* NotificationDetailViewController.m */,
 				CED8024217CC525E006FA79E /* NotificationDetailViewController_iPhone.xib */,
+				CEDD6C9117D9D4C900754645 /* NotificationPublishViewController.h */,
+				CEDD6C9217D9D4C900754645 /* NotificationPublishViewController.m */,
+				CEDD6C9317D9D4C900754645 /* NotificationPublishViewController_iPhone.xib */,
 			);
 			name = Notifications;
 			sourceTree = "<group>";
@@ -713,6 +721,7 @@
 				CE95B21717D6DF770024008E /* Localizable.strings in Resources */,
 				CE95B22017D6E3D10024008E /* ContactsViewController_iPhone.xib in Resources */,
 				CE95B22217D6E3F70024008E /* NotificationsViewController_iPhone.xib in Resources */,
+				CEDD6C9517D9D4C900754645 /* NotificationPublishViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,6 +780,7 @@
 				CE95B22517D6E9DE0024008E /* ClassContact.m in Sources */,
 				CE95B22817D704DD0024008E /* TeacherContact.m in Sources */,
 				CE95B22B17D70BCB0024008E /* StudentContact.m in Sources */,
+				CEDD6C9417D9D4C900754645 /* NotificationPublishViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

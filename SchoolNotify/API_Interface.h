@@ -10,7 +10,8 @@
 #define SchoolNotify_API_Interface_h
 
 //SERVER Domain
-#define API_HOST   @"http://schoolproject.salmonapps.com:8091"
+//#define API_HOST   @"http://schoolproject.salmonapps.com:8091"
+#define API_HOST   @"http://127.0.0.1:8091"
 
 //API URL
 #define API_COMMAND_USER_LOGIN @"login.php"

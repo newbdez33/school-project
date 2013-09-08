@@ -29,6 +29,7 @@
         self.title = NSLocalizedString(@"通讯录", @"联系人");
         self.tabBarItem.image = [UIImage imageNamed:@"second"];
         isFiltered = NO;
+        isModePicker = NO;
     }
     return self;
 }
@@ -138,7 +139,7 @@
         cell = [[[NSBundle mainBundle] loadNibNamed:XIB(@"ContactCell") owner:self options:nil] lastObject];
     }
     
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     NSArray *keys = nil;
     NSDictionary *tableData = nil;
@@ -155,6 +156,12 @@
     Contact *contact = [list objectAtIndex:indexPath.row];
     cell.nameLabel.text = contact.name;
     cell.telLabel.text = contact.tel;
+    
+    if (isModePicker==YES && [pickedContacts containsObject:contact]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     return cell;
 }
@@ -181,6 +188,20 @@
     
     Contact *contact = [list objectAtIndex:indexPath.row];
     
+    if (isModePicker) {
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            [pickedContacts removeObject:contact];
+        }else if (cell.accessoryType == UITableViewCellAccessoryNone) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            [pickedContacts addObject:contact];
+        }
+        // This removes the highlighting of the Cell
+        //[tableView deselectRowAtIndexPath:indexPath animated:YES];
+        return;
+    }
+    
     NSString *tel = contact.tel;
     
     //打电话
@@ -188,6 +209,32 @@
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel:%@", tel]]];
     }
 
+}
+
+- (void)modeForContactsPicker {
+    
+    isModePicker = YES;
+    
+    pickedContacts = [NSMutableArray array];
+
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"完成", @"Done") style:UIBarButtonItemStyleDone target:self action:@selector(doneWithPicking)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+    
+    contactTableView.allowsMultipleSelection = YES;
+    
+    //禁用下拉刷新
+    [_refreshHeaderView removeFromSuperview];
+    _refreshHeaderView = nil;
+    
+
+}
+
+- (void)doneWithPicking {
+    //fetch array of selected contacts
+    
+    if (self.delegate) {
+        [self.delegate doneWithPickingContacts:pickedContacts];
+    }
 }
 
 - (void)sortContactListDataWithFilter:(NSString *)name {

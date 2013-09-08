@@ -13,6 +13,7 @@
 #import "MBProgressHUD.h"
 #import "NotificationDetailViewController.h"
 #import "AppDelegate.h"
+#import "NotificationPublishViewController.h"
 
 @interface NotificationsViewController ()
 
@@ -145,7 +146,16 @@
 }
 
 - (void)publishNotificationButtonTouched:(id)sender {
-    NSLog(@"Publish touched");
+
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NotificationPublishViewController *vc = [[NotificationPublishViewController alloc] initWithNibName:XIB(@"NotificationPublishViewController") bundle:nil];
+    
+    vc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    
+    [app.tabBarController presentViewController:vc animated:YES completion:^{
+        
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning

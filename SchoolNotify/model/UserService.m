@@ -15,6 +15,7 @@
     
     //注意这个狗血API不是我设计的，我已经建议过全部用JSON POST，可是API设计相关人员不采用我的建议！
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@?username=%@&password=%@", API_HOST, API_COMMAND_USER_LOGIN, username, password]];
+    NSLog(@"login:%@", url);
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setRequestMethod:@"GET"];
     [request startSynchronous];
@@ -37,6 +38,8 @@
             return user;
         }
     }
+    
+    NSLog(@"failed:%@", request_error);
     //handling error, 数据出错
     if (error) {
         NSDictionary *networkerror = @{API_KEY_ERROR_MESSAGE:NSLocalizedString(@"服务器错误，请重试", @"error message 服务器错误")};
