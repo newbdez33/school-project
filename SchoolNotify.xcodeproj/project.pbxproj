@@ -315,9 +315,9 @@
 		CE7ACCE317C5F05800A12DC4 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
-				CE95B22117D6E3F60024008E /* NotificationsViewController_iPhone.xib */,
 				CE95B20017D6286A0024008E /* NotificationsViewController.h */,
 				CE95B20117D6286A0024008E /* NotificationsViewController.m */,
+				CE95B22117D6E3F60024008E /* NotificationsViewController_iPhone.xib */,
 				CED8021417CAFFD7006FA79E /* NotificationCell.h */,
 				CED8021517CAFFD7006FA79E /* NotificationCell.m */,
 				CED8021717CB0006006FA79E /* NotificationCell_iPhone.xib */,

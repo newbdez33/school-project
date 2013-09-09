@@ -22,4 +22,16 @@
     return NIL_STR([originData objectForKey:API_KEY_USER_SCHOOL_ID]);
 }
 
+- (NSString *)name {
+    return NIL_STR([originData objectForKey:@"name"]);
+}
+
+- (NSString *)class_name {
+    return NIL_STR([originData objectForKey:@"class_name"]);
+}
+
+- (NSString *)head_teacher {
+    return NIL_STR([originData objectForKey:@"head_teacher"]);
+}
+
 @end

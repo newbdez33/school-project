@@ -22,5 +22,5 @@
 
 - (void)publishNotificationButtonTouched:(id)sender;
 - (void)loadData;
-
+- (void)configToolbar;
 @end

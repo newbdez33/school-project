@@ -94,7 +94,7 @@
     //    UIBarButtonItem *bi = [[UIBarButtonItem alloc]
     //                           initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refresh:)];
     //    [buttons addObject:bi];
-    
+
     // Add profile button.
     UIBarButtonItem *bi = [[UIBarButtonItem alloc] initWithTitle:@"发布通知" style:UIBarButtonItemStylePlain target:self action:@selector(publishNotificationButtonTouched:)];
     bi.style = UIBarButtonItemStyleBordered;
@@ -113,7 +113,6 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationUpdated:) name:NOTIFICATION_NAME_NOTIFICATION_UPDATED object:nil];
     
-    [self configToolbar];
     
     [self loadData];
     

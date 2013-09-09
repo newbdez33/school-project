@@ -26,7 +26,7 @@
 #define API_KEY_ERROR_MESSAGE @"error_msg"
 
 #define API_KEY_USER_ID @"userid"
-#define API_KEY_USER_ROLE @"rold_id"
+#define API_KEY_USER_ROLE @"role_id"
 #define API_KEY_USER_SCHOOL_ID @"school_id"
 
 #define API_KEY_CONTACT_GRADE_ID @"grade_id"

@@ -10,7 +10,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import "AppDelegate.h"
 #import "Contact.h"
-#import "NotificationsTypePickerViewController.h"
 #import "MLTableAlert.h"
 #import "NotificationService.h"
 #import "NotificationsViewController.h"

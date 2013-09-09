@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "UserService.h"
 #import "MBProgressHUD.h"
+#import "NotificationsViewController.h"
 
 @interface LoginViewController ()
 
@@ -29,7 +30,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    NSString *un = [[NSUserDefaults standardUserDefaults] stringForKey:@"login.username"];
+    username.text = un;
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,7 +71,19 @@
                 if (user) {
                     app.currentUser = user;
                     [self presentViewController:app.tabBarController animated:YES completion:^{
-                        //
+                        
+                        [[NSUserDefaults standardUserDefaults] setObject:username.text forKey:@"login.username"];
+                        [[NSUserDefaults standardUserDefaults] synchronize];
+                        password.text = @"";
+                        [password resignFirstResponder];
+                        
+                        if ([app.currentUser.role_id isEqualToString:@"4"]) {
+                            //家长
+                        }else {
+                            UINavigationController *nvc = [app.tabBarController.viewControllers objectAtIndex:0];
+                            NotificationsViewController *n = [nvc.viewControllers objectAtIndex:0];
+                            [n configToolbar];
+                        }
                     }];
                 }
             }
