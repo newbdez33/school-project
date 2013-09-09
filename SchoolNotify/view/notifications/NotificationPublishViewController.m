@@ -10,10 +10,16 @@
 #import <QuartzCore/QuartzCore.h>
 #import "AppDelegate.h"
 #import "Contact.h"
+#import "NotificationsTypePickerViewController.h"
+#import "MLTableAlert.h"
+#import "NotificationService.h"
+#import "NotificationsViewController.h"
 
 #define HEIGHT_TEXTVIEW 160
 
-@interface NotificationPublishViewController ()
+@interface NotificationPublishViewController () {
+    MLTableAlert *typeAlert;
+}
 
 @end
 
@@ -23,7 +29,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        self.types = @{@"通知":@"1", @"紧急通知":@"2", @"系统通知":@"3"};
+        self.selectedNotifyType = @"1";
     }
     return self;
 }
@@ -46,6 +53,43 @@
 }
 
 #pragma mark - Actions!
+- (IBAction)publishButtonTouched:(id)sender {
+    
+    [contentTextView resignFirstResponder];
+    
+    NSString *need_reply = @"0";
+    if (needReplySwitch.on == YES) {
+        need_reply = @"1";
+    }
+    
+    NSMutableString *error_msg = [NSMutableString string];
+    if (contactCollectionFields.text.length==0) {
+        [error_msg appendFormat:@"%@\n", @"请选择联系人"];
+    }
+    if (contentTextView.text.length==0) {
+        [error_msg appendFormat:@"%@\n", @"请输入通知内容"];
+    }
+    if (error_msg.length>0) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"提示", @"")  message:NSLocalizedString(error_msg, @"")  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        return;
+    }
+    
+    BOOL success = [NotificationService postNotification:self.selectedNotifyType need_reply:need_reply content:contentTextView.text recipients:recipients];
+    if (success) {
+        AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        [app.tabBarController dismissViewControllerAnimated:YES completion:^{
+            UINavigationController *nvc = [app.tabBarController.viewControllers objectAtIndex:0];
+            NotificationsViewController *n = [nvc.viewControllers objectAtIndex:0];
+            [n loadData];
+        }];
+
+    }else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"提示", @"")  message:NSLocalizedString(@"发布通知时出错，请确认网络连接稍后重试", @"")  delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+    }
+}
+
 - (IBAction)presentContactPicker:(id)sender {
     ContactsViewController *contactsPicker = [[ContactsViewController alloc] initWithNibName:XIB(@"ContactsViewController") bundle:nil];
     
@@ -67,11 +111,50 @@
     }];
     contactCollectionFields.text = recipients_string;
     
+    //TODO Maybe use this https://github.com/bennyguitar/iOS----BubbleButtonView
     
     [self dismissViewControllerAnimated:YES completion:^{
     
         
     }];
+}
+
+- (IBAction)notificationTypeButtonTouched:(id)sender {
+    
+    typeAlert = [MLTableAlert tableAlertWithTitle:@"选择通知类型" cancelButtonTitle:@"取消" numberOfRows:^NSInteger (NSInteger section)
+                  {
+                      return self.types.allKeys.count;
+                  }
+                andCells:^UITableViewCell* (MLTableAlert *anAlert, NSIndexPath *indexPath)
+                  {
+                      static NSString *CellIdentifier = @"CellIdentifier";
+                      UITableViewCell *cell = [anAlert.table dequeueReusableCellWithIdentifier:CellIdentifier];
+                      if (cell == nil)
+                          cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+                      
+                      NSString *k = [self.types.allKeys objectAtIndex:indexPath.row];
+                      cell.textLabel.text = k;
+                      
+                      return cell;
+                  }];
+	
+	// Setting custom alert height
+	typeAlert.height = 250;
+	
+	// configure actions to perform
+	[typeAlert configureSelectionBlock:^(NSIndexPath *selectedIndex){
+		//selected
+        NSString *k = [self.types.allKeys objectAtIndex:selectedIndex.row];
+        self.selectedNotifyType = [self.types objectForKey:k];
+        
+        [notificationTypeButton setTitle:[NSString stringWithFormat:@"%@ ▼", NSLocalizedString(k, @"type")] forState:UIControlStateNormal];
+        
+	} andCompletionBlock:^{
+		//cancel
+	}];
+	
+	// show the alert
+	[typeAlert show];
 }
 
 - (IBAction)closeButtonTouched:(id)sender {

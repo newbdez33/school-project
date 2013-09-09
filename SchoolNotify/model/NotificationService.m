@@ -10,6 +10,10 @@
 #import "AppDelegate.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
+#import "StudentContact.h"
+#import "TeacherContact.h"
+#import "ClassContact.h"
+#import "NSArray+JsonMethods.h"
 
 @implementation NotificationService
 
@@ -75,7 +79,57 @@
  }
 
  */
-+ (BOOL)postNotification:(NSInteger)range target_id:(NSInteger)target_id content:(NSString *)content need_reply:(BOOL)need_reply {
++ (BOOL)postNotification:(NSString *)type need_reply:(NSString *)need_reply content:(NSString *)content recipients:(NSArray *)recipients {
+
+    AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", API_HOST, API_COMMAND_NOTIFICATION_PUBLISH]];
+    
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request setPostValue:app.currentUser.user_id forKey:@"uid"];
+    [request setPostValue:type forKey:@"tzlx"];
+    [request setPostValue:need_reply forKey:@"hftype"];
+    [request setPostValue:content forKey:@"content"];
+    
+    NSMutableArray *recipients_data = [NSMutableArray array];
+    [recipients enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+
+        if ([obj isKindOfClass:[StudentContact class]]) {
+            StudentContact *c = obj;
+            NSDictionary *r = @{@"student_id":c.student_id};
+            [recipients_data addObject:r];
+        }
+        if ([obj isKindOfClass:[TeacherContact class]]) {
+            TeacherContact *c = obj;
+            NSDictionary *r = @{@"teacher_id":c.teacher_id};
+            [recipients_data addObject:r];
+        }
+        if ([obj isKindOfClass:[ClassContact class]]) {
+            ClassContact *c = obj;
+            NSDictionary *r = @{@"class_id":c.class_id};
+            [recipients_data addObject:r];
+        }
+    }];
+    NSString *recipients_json = [recipients_data jsonString];
+    [request setPostValue:recipients_json forKey:@"fbid"];
+    
+    [request startSynchronous];
+    NSError *request_error = [request error];
+    if (!request_error) {
+        NSString *response = [request responseString];
+        NSDictionary *data = [response dictionaryFromJson];
+        if (data) {
+            if ([[data objectForKey:@"success"] boolValue]) {
+                return YES;
+            }else {
+                return NO;
+            }
+        }else {
+            NSLog(@"response incorrect:%@", response);
+            return NO;
+        }
+    }
+    
     return NO;
 }
 

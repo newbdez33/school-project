@@ -18,7 +18,12 @@
     NSArray *recipients;    //通知接收者s
 }
 
+@property (nonatomic, strong) NSDictionary *types;
+@property (nonatomic, strong) NSString *selectedNotifyType;
+
 - (IBAction)closeButtonTouched:(id)sender;
 - (IBAction)presentContactPicker:(id)sender;
+- (IBAction)notificationTypeButtonTouched:(id)sender;
+- (IBAction)publishButtonTouched:(id)sender;
 
 @end

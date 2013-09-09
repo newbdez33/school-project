@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE6BE94D17DD4370000E4AE6 /* MLTableAlertBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6BE94317DD4370000E4AE6 /* MLTableAlertBackground.png */; };
+		CE6BE94E17DD4370000E4AE6 /* MLTableAlertBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6BE94417DD4370000E4AE6 /* MLTableAlertBackground@2x.png */; };
+		CE6BE94F17DD4370000E4AE6 /* MLTableAlertButton.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6BE94517DD4370000E4AE6 /* MLTableAlertButton.png */; };
+		CE6BE95017DD4370000E4AE6 /* MLTableAlertButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6BE94617DD4370000E4AE6 /* MLTableAlertButton@2x.png */; };
+		CE6BE95117DD4370000E4AE6 /* MLTableAlertButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6BE94717DD4370000E4AE6 /* MLTableAlertButtonPressed.png */; };
+		CE6BE95217DD4370000E4AE6 /* MLTableAlertButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6BE94817DD4370000E4AE6 /* MLTableAlertButtonPressed@2x.png */; };
+		CE6BE95317DD4370000E4AE6 /* MLTableAlertShadowMask.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6BE94917DD4370000E4AE6 /* MLTableAlertShadowMask.png */; };
+		CE6BE95417DD4370000E4AE6 /* MLTableAlertShadowMask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE6BE94A17DD4370000E4AE6 /* MLTableAlertShadowMask@2x.png */; };
+		CE6BE95517DD4370000E4AE6 /* MLTableAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BE94C17DD4370000E4AE6 /* MLTableAlert.m */; };
+		CE6BE95817DD514C000E4AE6 /* NSArray+JsonMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6BE95717DD514C000E4AE6 /* NSArray+JsonMethods.m */; };
 		CE95B1E417D61E040024008E /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = CE95B1E317D61E040024008E /* Contact.m */; };
 		CE95B1E717D6224A0024008E /* ContactService.m in Sources */ = {isa = PBXBuildFile; fileRef = CE95B1E617D6224A0024008E /* ContactService.m */; };
 		CE95B1ED17D627B60024008E /* Util.m in Sources */ = {isa = PBXBuildFile; fileRef = CE95B1EC17D627B60024008E /* Util.m */; };
@@ -95,6 +105,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE6BE94317DD4370000E4AE6 /* MLTableAlertBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MLTableAlertBackground.png; sourceTree = "<group>"; };
+		CE6BE94417DD4370000E4AE6 /* MLTableAlertBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MLTableAlertBackground@2x.png"; sourceTree = "<group>"; };
+		CE6BE94517DD4370000E4AE6 /* MLTableAlertButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MLTableAlertButton.png; sourceTree = "<group>"; };
+		CE6BE94617DD4370000E4AE6 /* MLTableAlertButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MLTableAlertButton@2x.png"; sourceTree = "<group>"; };
+		CE6BE94717DD4370000E4AE6 /* MLTableAlertButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MLTableAlertButtonPressed.png; sourceTree = "<group>"; };
+		CE6BE94817DD4370000E4AE6 /* MLTableAlertButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MLTableAlertButtonPressed@2x.png"; sourceTree = "<group>"; };
+		CE6BE94917DD4370000E4AE6 /* MLTableAlertShadowMask.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MLTableAlertShadowMask.png; sourceTree = "<group>"; };
+		CE6BE94A17DD4370000E4AE6 /* MLTableAlertShadowMask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MLTableAlertShadowMask@2x.png"; sourceTree = "<group>"; };
+		CE6BE94B17DD4370000E4AE6 /* MLTableAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLTableAlert.h; sourceTree = "<group>"; };
+		CE6BE94C17DD4370000E4AE6 /* MLTableAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLTableAlert.m; sourceTree = "<group>"; };
+		CE6BE95617DD514C000E4AE6 /* NSArray+JsonMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+JsonMethods.h"; sourceTree = "<group>"; };
+		CE6BE95717DD514C000E4AE6 /* NSArray+JsonMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+JsonMethods.m"; sourceTree = "<group>"; };
 		CE95B1E217D61E040024008E /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Contact.h; path = model/Contact.h; sourceTree = "<group>"; };
 		CE95B1E317D61E040024008E /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Contact.m; path = model/Contact.m; sourceTree = "<group>"; };
 		CE95B1E517D6224A0024008E /* ContactService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactService.h; path = model/ContactService.h; sourceTree = "<group>"; };
@@ -265,6 +287,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE6BE94117DD4370000E4AE6 /* MLTableAlert */ = {
+			isa = PBXGroup;
+			children = (
+				CE6BE94217DD4370000E4AE6 /* Images */,
+				CE6BE94B17DD4370000E4AE6 /* MLTableAlert.h */,
+				CE6BE94C17DD4370000E4AE6 /* MLTableAlert.m */,
+			);
+			path = MLTableAlert;
+			sourceTree = "<group>";
+		};
+		CE6BE94217DD4370000E4AE6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CE6BE94317DD4370000E4AE6 /* MLTableAlertBackground.png */,
+				CE6BE94417DD4370000E4AE6 /* MLTableAlertBackground@2x.png */,
+				CE6BE94517DD4370000E4AE6 /* MLTableAlertButton.png */,
+				CE6BE94617DD4370000E4AE6 /* MLTableAlertButton@2x.png */,
+				CE6BE94717DD4370000E4AE6 /* MLTableAlertButtonPressed.png */,
+				CE6BE94817DD4370000E4AE6 /* MLTableAlertButtonPressed@2x.png */,
+				CE6BE94917DD4370000E4AE6 /* MLTableAlertShadowMask.png */,
+				CE6BE94A17DD4370000E4AE6 /* MLTableAlertShadowMask@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		CE7ACCE317C5F05800A12DC4 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
@@ -436,6 +483,7 @@
 		CED8018A17C76648006FA79E /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				CE6BE94117DD4370000E4AE6 /* MLTableAlert */,
 				CED8023317CB95F0006FA79E /* MBProgressHUD */,
 				CED8021C17CB942F006FA79E /* EGOTableViewPullRefresh */,
 				CED801D917C8FAD8006FA79E /* MBAlertView */,
@@ -502,6 +550,8 @@
 			children = (
 				CED801D617C8F6F1006FA79E /* NSString+JsonMethods.h */,
 				CED801D717C8F6F1006FA79E /* NSString+JsonMethods.m */,
+				CE6BE95617DD514C000E4AE6 /* NSArray+JsonMethods.h */,
+				CE6BE95717DD514C000E4AE6 /* NSArray+JsonMethods.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -722,6 +772,14 @@
 				CE95B22017D6E3D10024008E /* ContactsViewController_iPhone.xib in Resources */,
 				CE95B22217D6E3F70024008E /* NotificationsViewController_iPhone.xib in Resources */,
 				CEDD6C9517D9D4C900754645 /* NotificationPublishViewController_iPhone.xib in Resources */,
+				CE6BE94D17DD4370000E4AE6 /* MLTableAlertBackground.png in Resources */,
+				CE6BE94E17DD4370000E4AE6 /* MLTableAlertBackground@2x.png in Resources */,
+				CE6BE94F17DD4370000E4AE6 /* MLTableAlertButton.png in Resources */,
+				CE6BE95017DD4370000E4AE6 /* MLTableAlertButton@2x.png in Resources */,
+				CE6BE95117DD4370000E4AE6 /* MLTableAlertButtonPressed.png in Resources */,
+				CE6BE95217DD4370000E4AE6 /* MLTableAlertButtonPressed@2x.png in Resources */,
+				CE6BE95317DD4370000E4AE6 /* MLTableAlertShadowMask.png in Resources */,
+				CE6BE95417DD4370000E4AE6 /* MLTableAlertShadowMask@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,6 +839,8 @@
 				CE95B22817D704DD0024008E /* TeacherContact.m in Sources */,
 				CE95B22B17D70BCB0024008E /* StudentContact.m in Sources */,
 				CEDD6C9417D9D4C900754645 /* NotificationPublishViewController.m in Sources */,
+				CE6BE95517DD4370000E4AE6 /* MLTableAlert.m in Sources */,
+				CE6BE95817DD514C000E4AE6 /* NSArray+JsonMethods.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

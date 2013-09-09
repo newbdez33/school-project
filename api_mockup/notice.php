@@ -90,6 +90,11 @@ reply_array:[
 function api_reply() {
 	$ret = array("success"=>true);
 
+	if (!is_dir("./replies")) {
+		mkdir("./replies");
+	}
+
+
 	$message_id = $_REQUEST['notice_id'];
 	
 	$rp = array();
@@ -111,6 +116,16 @@ function api_reply() {
 }
 
 function api_add() {
+	if (!is_dir("./notifications")) {
+		mkdir("./notifications");
+	}
+	$uid = $_POST['uid'];
+	$c = print_r($_POST, true);
+	$d = date("Ymd_His");
+	file_put_contents("notifications/post_{$uid}_{$d}.txt", $c);
+
+	$ret = array("success"=>true);
+	echo json_encode($ret);
 	exit;
 }
 

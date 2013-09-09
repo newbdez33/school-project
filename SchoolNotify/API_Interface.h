@@ -18,6 +18,7 @@
 #define API_COMMAND_NOTIFICATION_LIST @"notice.php?mod=list"
 #define API_COMMAND_NOTIFICATION_CONTENT @"notice.php?mod=view"
 #define API_COMMAND_NOTIFICATION_REPLY @"notice.php?mod=reply"
+#define API_COMMAND_NOTIFICATION_PUBLISH @"notice.php?mod=add"
 #define API_COMMAND_CONTACT_LIST @"notice.php?mod=get_contacts"
 
 //KEYs

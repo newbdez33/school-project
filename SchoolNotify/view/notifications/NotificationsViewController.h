@@ -21,5 +21,6 @@
 @property (nonatomic, strong) NSMutableArray *notificationList;
 
 - (void)publishNotificationButtonTouched:(id)sender;
+- (void)loadData;
 
 @end
