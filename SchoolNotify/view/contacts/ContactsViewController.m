@@ -138,8 +138,7 @@
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:XIB(@"ContactCell") owner:self options:nil] lastObject];
     }
-    
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     
     NSArray *keys = nil;
     NSDictionary *tableData = nil;
@@ -157,12 +156,15 @@
     cell.nameLabel.text = contact.name;
     cell.telLabel.text = contact.tel;
     
-    if (isModePicker==YES && [pickedContacts containsObject:contact]) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    }else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.accessoryType = UITableViewCellAccessoryNone;
+    if (isModePicker==YES) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        if ([pickedContacts containsObject:contact]) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
     }
     
+
     return cell;
 }
 
