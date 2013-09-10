@@ -9,6 +9,7 @@
 #import "MeViewController.h"
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "NotificationsViewController.h"
 
 @interface MeViewController ()
 
@@ -41,8 +42,12 @@
 
 #pragma mark - Actions
 - (IBAction)logoutTouched:(id)sender {
-    AppDelegate *appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
-    [appDelegate.loginViewController logout];
+    AppDelegate *app = (AppDelegate*)[UIApplication sharedApplication].delegate;
+    [app.loginViewController logout];
+    
+    UINavigationController *nvc = [app.tabBarController.viewControllers objectAtIndex:0];
+    NotificationsViewController *n = [nvc.viewControllers objectAtIndex:0];
+    n.navigationItem.rightBarButtonItem = nil;
 
 }
 
