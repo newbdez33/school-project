@@ -158,10 +158,10 @@
     
     cell.accessoryType = UITableViewCellAccessoryNone;
     if (isModePicker==YES) {
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         if ([pickedContacts containsObject:contact]) {
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
 
@@ -229,6 +229,7 @@
     _refreshHeaderView = nil;
     
 
+    [contactTableView reloadData];
 }
 
 - (void)doneWithPicking {
@@ -241,7 +242,7 @@
 
 - (void)sortContactListDataWithFilter:(NSString *)name {
     
-    NSMutableDictionary *workingData = [NSMutableDictionary dictionaryWithDictionary:@{@"班级": [NSMutableArray array]}];
+    NSMutableDictionary *workingData = [NSMutableDictionary dictionaryWithDictionary:@{@"班级": [NSMutableArray array], @"老师":[NSMutableArray array]}];
     NSPredicate *namePredicate = nil;
     if (name!=nil) {
         namePredicate = [NSPredicate predicateWithBlock:^BOOL(id evaluatedObject, NSDictionary *bindings) {
@@ -268,18 +269,14 @@
     
     //2. 老师
     NSMutableArray *teacherList = [self.contactList objectForKey:@"teacher"];
+    NSMutableArray *teacherArray = [workingData objectForKey:@"老师"];
     [teacherList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         TeacherContact *c = [[TeacherContact alloc] initWithData:obj];
-        NSString *class_name = c.class_name;
-        if ([workingData objectForKey:class_name] == nil) {
-            [workingData setObject:[NSMutableArray array] forKey:class_name];
-        }
-        NSMutableArray *teacherArray = [workingData objectForKey:class_name];
         [teacherArray addObject:c];
-        if (namePredicate) {
-            [teacherArray filterUsingPredicate:namePredicate];
-        }
     }];
+    if (namePredicate) {
+        [teacherArray filterUsingPredicate:namePredicate];
+    }
 
     
     //3. 学生
