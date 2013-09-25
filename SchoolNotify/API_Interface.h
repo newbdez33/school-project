@@ -12,9 +12,10 @@
 //SERVER Domain
 
 #if TARGET_IPHONE_SIMULATOR
-    #define API_HOST   @"http://127.0.0.1:8091"
+//    #define API_HOST   @"http://127.0.0.1:8091"
+    #define API_HOST   @"http://218.61.39.250/school"
 #else
-    #define API_HOST   @"http://106.187.34.26:8091"
+    #define API_HOST   @"http://218.61.39.250/school"
 #endif
 
 //API URL
@@ -39,7 +40,7 @@
 #define API_KEY_CONTACT_TEACHER_ID @"teacher_id"
 #define API_KEY_CONTACT_NAME @"name"
 
-#define API_KEY_NOTIFICATION_MESSAGE_ID @"messageid"
+#define API_KEY_NOTIFICATION_MESSAGE_ID @"id"
 #define API_KEY_NOTIFICATION_CONTENT @"content"
 #define API_KEY_NOTIFICATION_NEED_REPLY @"is_reply"
 #define API_KEY_NOTIFICATION_NEED_REPLY_NO_NEED_REPLY @"0"

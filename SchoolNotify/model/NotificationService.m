@@ -20,8 +20,8 @@
 + (NSArray *)fetchNewNotifications:(NSString *)last_message_id {
     
     AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@&uid=%@&messageid=%@", API_HOST, API_COMMAND_NOTIFICATION_LIST, app.currentUser.user_id, last_message_id]];
-    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@&uid=%@&message_id=%@", API_HOST, API_COMMAND_NOTIFICATION_LIST, app.currentUser.user_id, last_message_id]];
+    NSLog(@"url:%@", url);
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setRequestMethod:@"GET"];
     [request startSynchronous];
@@ -30,7 +30,7 @@
         NSString *response = [request responseString];
         NSArray *data = [response arrayFromJson];
         if (data) {
-            return data;
+            return [[data reverseObjectEnumerator] allObjects];
         }else {
             NSLog(@"response incorrect:%@", response);
         }
@@ -43,7 +43,7 @@
     
     AppDelegate *app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@&uid=%@&messageid=%@&type=%@", API_HOST, API_COMMAND_NOTIFICATION_CONTENT, app.currentUser.user_id, notification.message_id, notification.type]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@&uid=%@&notice_id=%@&tzlx=%@", API_HOST, API_COMMAND_NOTIFICATION_CONTENT, app.currentUser.user_id, notification.message_id, notification.type]];
     
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
     [request setRequestMethod:@"GET"];
